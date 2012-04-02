@@ -6,7 +6,7 @@ tests_require = ['plone.app.testing']
 
 setup(name='redomino.tokenrole',
       version=version,
-      description="asign a local role bif a token is there",
+      description="This product allows you to share roles about a specific Plone content to an unregistered user through a link.",
       long_description="""\
 """,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
@@ -18,9 +18,9 @@ setup(name='redomino.tokenrole',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone app pas redomino',
-      author='Redomino',
-      author_email='tokenrole',
-      url='https://svn.redomino.com/redomino/redomino.tokenrole',
+      author='Redomino S.r.l.',
+      author_email='davide.moro@redomino.com',
+      url='https://github.com/redomino/redomino.tokenrole',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['redomino'],
