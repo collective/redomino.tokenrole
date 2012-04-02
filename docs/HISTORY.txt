@@ -1,0 +1,44 @@
+Changelog
+=========
+
+0.3 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
+0.2 (2012-04-02)
+----------------
+
+- Porting to Plone 4
+  [dmoro]
+
+- Converted all formlib forms to z3c.form
+  [dmoro]
+
+- Added i18n support
+  [dmoro]
+
+- Added a distribution form that let you share token roles through a "send to" form
+  [dmoro]
+
+- Added a multirole token (previously it was only possibile to grant a Reader role). 
+  Now you can choose which roles associate to your tokens
+  [dmoro]
+
+- Created converted all formlib forms to z3c.form
+  [dmoro]
+
+- Improved installation, now the PAS plugin is configured automatically in acl_users
+  [dmoro]
+
+- Added support to plone.app.testing and wrote some tests (not 100% tested)
+  [dmoro]
+
+
+0.1 (2012-03-21)
+----------------
+
+- First implementation and main author Maurizio Del Monte
+  [miziodel]
+

@@ -1,0 +1,46 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="redomino.tokenrole">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <i18n:registerTranslations directory="locales" />
+
+
+    <!-- Includes -->
+    <include package="Products.CMFCore" file="permissions.zcml"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
+           zcml:condition="have plone-41" />
+
+    <include file="permissions.zcml" />
+    <include file="vocabularies.zcml" />
+
+    
+    <include package=".browser" />
+    
+    <!-- Register profile-->
+    <genericsetup:registerProfile
+        name="default"
+        title="redomino.tokenrole"
+        directory="profiles/default"
+        description="Redomino TokenRole support"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <!-- Adapters -->
+    <adapter factory=".tokenroleprovider.TokenInfoSchema" />
+    <adapter 
+        for=".interfaces.ITokenRolesProviding"
+        provides=".interfaces.ITokenRolesAnnotate"
+        factory=".tokenroleprovider.TokenRolesAnnotateAdapter"/>
+
+    <adapter
+        for="Products.CMFCore.interfaces.IContentish"
+        factory=".tokenroleprovider.TokenRolesLocalRolesProviderAdapter"
+        />
+
+
+</configure>
