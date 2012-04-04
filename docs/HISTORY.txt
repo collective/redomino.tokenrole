@@ -4,13 +4,18 @@ Changelog
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Modified long_description in setup.py.
+  [dmoro]
+
+- Added .gitignore file.
+  [dmoro]
 
 
 0.3 (2012-04-02)
 ----------------
 
-- Nothing changed yet.
+- First public release
+  [sithmel]
 
 
 0.2 (2012-04-02)

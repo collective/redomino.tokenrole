@@ -7,9 +7,10 @@ tests_require = ['plone.app.testing']
 setup(name='redomino.tokenrole',
       version=version,
       description="This product allows you to share roles about a specific Plone content to an unregistered user through a link.",
-      long_description="""\
-""",
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      long_description=open("README.txt").read() + "\n" +
+                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      # Get more strings from
+      # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
         "Framework :: Plone",
         "Framework :: Zope2",
