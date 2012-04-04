@@ -5,10 +5,10 @@ Changelog
 ----------------
 
 - Modified long_description in setup.py.
-  [dmoro]
+  [davidemoro]
 
 - Added .gitignore file.
-  [dmoro]
+  [davidemoro]
 
 
 0.3 (2012-04-02)
@@ -22,29 +22,29 @@ Changelog
 ----------------
 
 - Porting to Plone 4
-  [dmoro]
+  [davidemoro]
 
 - Converted all formlib forms to z3c.form
-  [dmoro]
+  [davidemoro]
 
 - Added i18n support
-  [dmoro]
+  [davidemoro]
 
 - Added a distribution form that let you share token roles through a "send to" form
-  [dmoro]
+  [davidemoro]
 
 - Added a multirole token (previously it was only possibile to grant a Reader role). 
   Now you can choose which roles associate to your tokens
-  [dmoro]
+  [davidemoro]
 
 - Created converted all formlib forms to z3c.form
-  [dmoro]
+  [davidemoro]
 
 - Improved installation, now the PAS plugin is configured automatically in acl_users
-  [dmoro]
+  [davidemoro]
 
 - Added support to plone.app.testing and wrote some tests (not 100% tested)
-  [dmoro]
+  [davidemoro]
 
 
 0.1 (2012-03-21)
