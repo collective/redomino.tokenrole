@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4 (unreleased)
+0.4 (2012-04-04)
 ----------------
 
 - Modified long_description in setup.py.
