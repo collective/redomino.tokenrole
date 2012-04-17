@@ -22,6 +22,9 @@ Changelog
 - Added new tests
   [davidemoro]
 
+- English translation
+  [dpollino]
+
 
 0.4 (2012-04-04)
 ----------------
