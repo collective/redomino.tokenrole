@@ -18,8 +18,22 @@
     <include file="permissions.zcml" />
     <include file="vocabularies.zcml" />
 
-    
     <include package=".browser" />
+
+    <!-- Token role providing items -->
+    <class class="Products.ATContentTypes.content.base.ATCTContent">
+        <implements interface=".interfaces.ITokenRolesProviding" />
+    </class>
+    <class class="Products.ATContentTypes.content.base.ATCTFolder">
+        <implements interface=".interfaces.ITokenRolesProviding" />
+    </class>
+    <class class="Products.ATContentTypes.content.base.ATCTOrderedFolder">
+        <implements interface=".interfaces.ITokenRolesProviding" />
+    </class>
+    <class class="Products.ATContentTypes.content.base.ATCTBTreeFolder">
+        <implements interface=".interfaces.ITokenRolesProviding" />
+    </class>
+
     
     <!-- Register profile-->
     <genericsetup:registerProfile

@@ -32,3 +32,10 @@ class TestPortal(unittest.TestCase):
         acl_users = portal.acl_users
         self.assertTrue(PLUGINID in acl_users.objectIds())
 
+    def test_portal_actions(self):
+        """ Portal actions loaded? """
+        portal = self.layer['portal']
+        portal_actions = portal.portal_actions
+        self.assertTrue('manage_tokenrole' in portal_actions.object.objectIds())
+
+

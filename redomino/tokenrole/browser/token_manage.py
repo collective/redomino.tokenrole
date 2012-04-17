@@ -16,7 +16,6 @@
 
 import datetime
 
-from zope import interface
 from zope.schema import TextLine
 
 from z3c.form.form import applyChanges
@@ -34,10 +33,8 @@ from Products.Five import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 
 from redomino.tokenrole import tokenroleMessageFactory as _
-from redomino.tokenrole.interfaces import ITokenRolesProviding
 from redomino.tokenrole.interfaces import ITokenRolesAnnotate
 from redomino.tokenrole.interfaces import ITokenInfoSchema
-from redomino.tokenrole.interfaces import ITokenRoleSupport
 from redomino.tokenrole.config import DEFAULT_TOKEN_DAYS
 from redomino.tokenrole.utils import make_uuid
 
@@ -179,42 +176,4 @@ class TokenDeleteForm(form.Form):
 
 
 TokenDeleteFormView = layout.wrap_form(TokenDeleteForm)
-
-
-class TokenRoleSupport(BrowserView):
-    
-    interface.implements(ITokenRoleSupport)
-    
-    def __init__(self, context, request):
-        self.context = context
-        self.request = request
-        
-    @property
-    def tokenrole_enabled(self):
-        """return if token role is enabled on the context.
-        """
-        return ITokenRolesProviding.providedBy(self.context)
-        
-    def enable_tokenrole(self):
-        """enable token role management on context
-        """
-        if not self.tokenrole_enabled:
-            interface.alsoProvides(self.context, (ITokenRolesProviding,))
-            IStatusMessage(self.request).addStatusMessage(_("token_enabled", default="Token Role enabled"))
-            url = "%s/@@token_manage" % self.context.absolute_url()
-            self.request.response.redirect(url)
-
-    def disable_tokenrole(self):
-        """disable token role mnagement on context
-        """
-        if self.tokenrole_enabled:
-            provided = interface.directlyProvidedBy(self.context)
-            interface.directlyProvides(self.context, provided - ITokenRolesProviding)
-            IStatusMessage(self.request).addStatusMessage(_("token_disabled", default="Token Role disabled"))
-            url = "%s/view" % self.context.absolute_url()
-            self.request.response.redirect(url)
-            
-
-
-
 

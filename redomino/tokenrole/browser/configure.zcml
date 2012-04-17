@@ -41,13 +41,4 @@
     template="token_manage.pt"
     permission="tokenrole.ManageToken" />
   
-  
-  <!-- View utils -->
-  <browser:page
-    name="tokenrole_support"
-    for="*"
-    class=".token_manage.TokenRoleSupport"
-    permission="zope2.View"
-    allowed_interface="..interfaces.ITokenRoleSupport"/>  
-  
 </configure>

@@ -11,7 +11,7 @@
    <property name="url_expr">string:${object_url}/@@token_manage</property>
    <property name="icon_expr"></property>
    <property
-      name="available_expr">object/@@tokenrole_support/tokenrole_enabled</property>
+      name="available_expr">python:object.restrictedTraverse('@@plone_interface_info').provides('redomino.tokenrole.interfaces.ITokenRolesProviding')</property>
    <property name="permissions">
     <element value="Manage token role"/>
    </property>
@@ -20,39 +20,4 @@
  
  </object>  
 
- <object name="object_buttons" meta_type="CMF Action Category">
-  <property name="title"></property>
-  
-  <object name="enable_tokenrole" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Enable TokenRole</property>
-   <property name="description"
-      i18n:translate="">abilita gestione di tipo token role su questo oggetto</property>
-   <property
-      name="url_expr">string:${object_url}/@@tokenrole_support/enable_tokenrole</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">not:object/@@tokenrole_support/tokenrole_enabled</property>
-   <property name="permissions">
-    <element value="Manage token role"/>
-   </property>
-   <property name="visible">True</property>
-  </object>
-  
-  <object name="disable_tokenrole" meta_type="CMF Action" i18n:domain="plone">
-   <property name="title" i18n:translate="">Disable TokenRole</property>
-   <property name="description"
-      i18n:translate="">disabilita gestione di tipo token role su questo oggetto</property>
-   <property
-      name="url_expr">string:${object_url}/@@tokenrole_support/disable_tokenrole</property>
-   <property name="icon_expr"></property>
-   <property
-      name="available_expr">object/@@tokenrole_support/tokenrole_enabled</property>
-   <property name="permissions">
-    <element value="Manage token role"/>
-   </property>
-   <property name="visible">True</property>
-  </object>
-  
- </object>
- 
 </object>

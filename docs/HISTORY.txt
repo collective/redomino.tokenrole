@@ -4,7 +4,23 @@ Changelog
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- The share with link action is available by default without having to enable 
+  token role on the current item or section.
+  [davidemoro]
+
+- Get rid of the enable and disable token role action, it is enabled by default now.
+  Important: if you upgrade redomino.tokenrole to this version you should delete from
+  the category object_buttons of portal_actions the enable_tokenrole and disable_tokenrole.
+  [davidemoro]
+
+- Granted the token role permission to users with Editor role
+  [davidemoro]
+
+- Enabled the locales/en directory
+  [davidemoro]
+
+- Added new tests
+  [davidemoro]
 
 
 0.4 (2012-04-04)

@@ -58,11 +58,3 @@ class ITokenRolesAnnotate(Interface):
     token_dict = Attribute("dictionary with infos about tokens")
 
 
-class ITokenRoleSupport(Interface):
-
-    tokenrole_enabled = Attribute("boolean True if Token Role support is enabled")
-
-    def enable_tokenrole(): pass
-
-    def disable_tokenrole(): pass
-

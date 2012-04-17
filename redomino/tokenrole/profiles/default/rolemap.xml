@@ -4,6 +4,7 @@
         <permission name="Manage token role" acquire="True">
             <role name="Manager" />
             <role name="Site Administrator" />
+            <role name="Editor" />
         </permission>
     </permissions>
 </rolemap>
