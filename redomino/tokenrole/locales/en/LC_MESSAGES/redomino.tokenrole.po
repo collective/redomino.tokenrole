@@ -107,92 +107,92 @@ msgstr "Email"
 #. Default: "Roles"
 #: ./interfaces.py:46
 msgid "label_roles"
-msgstr ""
+msgstr "Roles"
 
 #. Default: "Send token form"
 #: ./browser/send_token.py:47
 msgid "label_send_form"
-msgstr ""
+msgstr "Share link to token"
 
 #. Default: "Send"
 #: ./browser/send_token.py:63
 msgid "label_send_token"
-msgstr ""
+msgstr "Send token"
 
 #. Default: "Token Validity End"
 #: ./interfaces.py:42
 msgid "label_token_validity"
-msgstr ""
+msgstr "Token validity"
 
 #. Default: "Token Value"
 #: ./interfaces.py:37
 msgid "label_token_value"
-msgstr ""
+msgstr "Token value"
 
 #. Default: "List of emails"
 #: ./browser/interfaces.py:40
 msgid "label_tokenrole_email_list"
-msgstr ""
+msgstr "Emails"
 
 #. Default: "Subject"
 #: ./browser/interfaces.py:32
 msgid "label_tokenrole_subject"
-msgstr ""
+msgstr "Subject"
 
 #. Default: "Text"
 #: ./browser/interfaces.py:36
 msgid "label_tokenrole_text"
-msgstr ""
+msgstr "Text"
 
 #. Default: "Token id"
 #: ./browser/interfaces.py:28
 msgid "label_tokenrole_token_id"
-msgstr ""
+msgstr "Token id"
 
 #. Default: "Modify token"
 #: ./browser/token_manage.py:115
 msgid "modify_token"
-msgstr ""
+msgstr "Modify token"
 
 #. Default: "New token"
 #: ./browser/token_manage.pt:42
 msgid "new_token"
-msgstr ""
+msgstr "Add a new token"
 
 #. Default: "No changes were applied."
 #: ./browser/send_token.py:49
 msgid "no_changes"
-msgstr ""
+msgstr "No changes were applied."
 
 #. Default: "Back to context"
 #: ./browser/token_manage.pt:44
 msgid "token_back"
-msgstr ""
+msgstr "Go back to context"
 
 #. Default: "End date:"
 #: ./browser/token_manage.pt:21
 msgid "token_end_date"
-msgstr ""
+msgstr "Expiration date"
 
 #. Default: "${text}s<br/>Date: ${date}s<br/>Url: <a href=\"${url}s\">Access<a/> "
 #: ./browser/send_token.py:81
 msgid "token_message_text"
-msgstr ""
+msgstr "${text}s<br/>Validity date: ${date}s<br/>Access by this url: <a href=\"${url}s\">Access<a/>"
 
 #. Default: "An error has occurred"
 #: ./browser/send_token.py:68
 msgid "token_role_send_ko"
-msgstr ""
+msgstr "An error has occurred"
 
 #. Default: "Mail error"
 #: ./browser/send_token.py:110
 msgid "token_role_send_ko_mail"
-msgstr ""
+msgstr "Your mail could not be delivered"
 
 #. Default: "Token sent"
 #: ./browser/send_token.py:114
 msgid "token_role_send_ok"
-msgstr ""
+msgstr "Token sent"
 
 #. Default: "URL:<br /> <a href=\"${DYNAMIC_CONTENT}\">${DYNAMIC_CONTENT}</a>"
 #: ./browser/token_manage.pt:36
@@ -202,15 +202,15 @@ msgstr ""
 #. Default: "Delete"
 #: ./browser/token_manage.pt:27
 msgid "tokenrole_delete_token"
-msgstr ""
+msgstr "Delete"
 
 #. Default: "Modify"
 #: ./browser/token_manage.pt:23
 msgid "tokenrole_modify_token"
-msgstr ""
+msgstr "Modify"
 
 #. Default: "Distribute Token"
 #: ./browser/token_manage.pt:31
 msgid "tokenrole_send_token"
-msgstr ""
+msgstr "Distribute this token by e-mail"
 
