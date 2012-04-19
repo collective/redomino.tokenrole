@@ -17,92 +17,92 @@ msgstr ""
 #. Default: "Add token"
 #: ./browser/token_manage.py:82
 msgid "add_token"
-msgstr ""
+msgstr "Add token"
 
 #. Default: "Data successfully updated."
 #: ./browser/send_token.py:48
 msgid "data_saved"
-msgstr ""
+msgstr "Data successfully updated"
 
 #. Default: "An error has occurred"
 #: ./browser/token_manage.py:165
 msgid "delete_error"
-msgstr ""
+msgstr "An error has occurred"
 
 #. Default: "Token removed"
 #: ./browser/token_manage.py:173
 msgid "delete_success"
-msgstr ""
+msgstr "Token succesfully removed"
 
 #. Default: "Delete token"
 #: ./browser/token_manage.py:161
 msgid "delete_token"
-msgstr ""
+msgstr "Delete token"
 
 #. Default: "There were some errors."
 #: ./browser/token_manage.py:64
 msgid "form_errors"
-msgstr ""
+msgstr "An error has occurred"
 
 #. Default: "TokenRole: Add token"
 #: ./browser/token_manage.py:63
 msgid "heading_add_token"
-msgstr ""
+msgstr "Add a new token"
 
 #. Default: "TokenRole: Delete token"
 #: ./browser/token_manage.py:142
 msgid "heading_delete_token"
-msgstr ""
+msgstr "Delete token"
 
 #. Default: "TokenRole: Modify token"
 #: ./browser/token_manage.py:101
 msgid "heading_edit_token"
-msgstr ""
+msgstr "Modify token"
 
 #. Default: "Token Role management"
 #: ./browser/token_manage.pt:14
 msgid "heading_tokenrole_manage"
-msgstr ""
+msgstr "Manage token"
 
 #. Default: "Roles to assing"
 #: ./interfaces.py:47
 msgid "help_roles"
-msgstr ""
+msgstr "Choose which permissions this token will grant to the user(s) who will enter this area"
 
 #. Default: "End date to assign to token"
 #: ./interfaces.py:43
 msgid "help_token_validity"
-msgstr ""
+msgstr "Expiration date of the token"
 
 #. Default: "Value to assign to token"
 #: ./interfaces.py:38
 msgid "help_token_value"
-msgstr ""
+msgstr "Value of the token"
 
 #. Default: "Please enter here the list of emails."
 #: ./browser/interfaces.py:41
 msgid "help_tokenrole_email_list"
-msgstr ""
+msgstr "Please enter here the e-mail addresses you want to send the token to. Enter one e-mail address per line."
 
 #. Default: "Please enter the subject of the message you want to send."
 #: ./browser/interfaces.py:33
 msgid "help_tokenrole_subject"
-msgstr ""
+msgstr "Please enter the subject of the message you want to send."
 
 #. Default: "Please enter here the message you want to send."
 #: ./browser/interfaces.py:37
 msgid "help_tokenrole_text"
-msgstr ""
+msgstr "Please enter here the message you want to send: the token and its expiration date will be attached to it."
 
 #. Default: "This token is going to be distributed."
 #: ./browser/interfaces.py:29
 msgid "help_tokenrole_token_id"
-msgstr ""
+msgstr "For your privacy, do not share this token with untrustworthy people"
 
 #. Default: "Email"
 #: ./browser/interfaces.py:44
 msgid "label_email"
-msgstr ""
+msgstr "Email"
 
 #. Default: "Roles"
 #: ./interfaces.py:46
