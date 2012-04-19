@@ -16,11 +16,11 @@ msgstr ""
 "Domain: plone\n"
 
 msgid "Disable TokenRole"
-msgstr ""
+msgstr "Disable token ditribution"
 
 msgid "Enable TokenRole"
-msgstr ""
+msgstr "Enable token ditribution"
 
 msgid "Manage TokenRole"
-msgstr ""
+msgstr "Manage token ditribution"
 
