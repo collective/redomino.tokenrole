@@ -16,5 +16,5 @@ msgstr ""
 "Domain: plone\n"
 
 msgid "Manage TokenRole"
-msgstr "Manage token ditribution"
+msgstr "Manage token distribution"
 
