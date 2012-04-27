@@ -19,9 +19,3 @@ msgstr ""
 
 msgid "Manage TokenRole"
 msgstr ""
-
-msgid "Enable TokenRole"
-msgstr ""
-
-msgid "Disable TokenRole"
-msgstr ""

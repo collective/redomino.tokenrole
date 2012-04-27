@@ -15,12 +15,6 @@ msgstr ""
 "Domain: plone\n"
 "X-Is-Fallback-For: it-ch it-it\n"
 
-msgid "Disable TokenRole"
-msgstr "Disabilita condivisione con link"
-
-msgid "Enable TokenRole"
-msgstr "Abilita condivisione con link"
-
 msgid "Manage TokenRole"
 msgstr "Condivisione con link"
 

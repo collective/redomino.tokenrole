@@ -15,12 +15,6 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: plone\n"
 
-msgid "Disable TokenRole"
-msgstr "Disable token ditribution"
-
-msgid "Enable TokenRole"
-msgstr "Enable token ditribution"
-
 msgid "Manage TokenRole"
 msgstr "Manage token ditribution"
 
