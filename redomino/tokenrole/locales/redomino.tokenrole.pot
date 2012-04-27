@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-04-27 09:55+0000\n"
+"POT-Creation-Date: 2012-04-27 13:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,7 @@ msgstr ""
 
 #. Default: "Data successfully updated."
 #: ./browser/send_token.py:48
+#: ./browser/token_manage.py:102
 msgid "data_saved"
 msgstr ""
 
@@ -164,6 +165,7 @@ msgstr ""
 
 #. Default: "No changes were applied."
 #: ./browser/send_token.py:49
+#: ./browser/token_manage.py:103
 msgid "no_changes"
 msgstr ""
 

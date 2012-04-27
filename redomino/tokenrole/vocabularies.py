@@ -18,19 +18,16 @@ from Acquisition import aq_get
 
 from zope.interface import implements
 from zope.i18n import translate
-from zope.i18nmessageid import MessageFactory
 from zope.schema.interfaces import IVocabularyFactory
 from zope.schema.vocabulary import SimpleVocabulary
 from zope.schema.vocabulary import SimpleTerm
 
-PMF = MessageFactory('plone')
 
 class ItemsVocab(object):
     implements(IVocabularyFactory)
 
-    def __init__(self, terms, pmf):
+    def __init__(self, terms):
         self.TERMS = terms
-        self.PMF = pmf
 
     @property
     def terms(self):
@@ -38,16 +35,15 @@ class ItemsVocab(object):
 
     def __call__(self, context):
         request = aq_get(context, 'REQUEST', None)
-        terms = [SimpleTerm(value, token, translate(self.PMF(title), context=request)) for value, token, title in self.terms]
+        terms = [SimpleTerm(value, token, translate(title, domain="plone", context=request, default=default)) for value, token, title, default in self.terms]
         return SimpleVocabulary(terms)
 
 
-RolesFactory = ItemsVocab([('Reader', 'Reader', 'title_can_view'), 
-                           ('Contributor', 'Contributor', 'title_can_add'), 
-                           ('Reviewer', 'Reviewer', 'title_can_review'), 
-                           ('Editor', 'Editor', 'title_can_edit'),
-                          ], 
-                          PMF
+RolesFactory = ItemsVocab([('Reader', 'Reader', 'title_can_view', u'Can view'), 
+                           ('Contributor', 'Contributor', 'title_can_add', u'Can add'), 
+                           ('Reviewer', 'Reviewer', 'title_can_review', u'Can review'), 
+                           ('Editor', 'Editor', 'title_can_edit', u'Can edit'),
+                          ]
                          )
 
 
