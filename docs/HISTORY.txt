@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.5 (unreleased)
+0.5 (2012-04-27)
 ----------------
 
 - The share with link action is available by default without having to enable 
