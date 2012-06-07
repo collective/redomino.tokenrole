@@ -4,7 +4,8 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Missing action "share with link" for folders, fixed.
+  [davidemoro]
 
 
 0.5 (2012-04-27)

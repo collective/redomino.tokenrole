@@ -24,13 +24,7 @@
     <class class="Products.ATContentTypes.content.base.ATCTContent">
         <implements interface=".interfaces.ITokenRolesProviding" />
     </class>
-    <class class="Products.ATContentTypes.content.base.ATCTFolder">
-        <implements interface=".interfaces.ITokenRolesProviding" />
-    </class>
-    <class class="Products.ATContentTypes.content.base.ATCTOrderedFolder">
-        <implements interface=".interfaces.ITokenRolesProviding" />
-    </class>
-    <class class="Products.ATContentTypes.content.base.ATCTBTreeFolder">
+    <class class="Products.ATContentTypes.content.folder.ATFolder">
         <implements interface=".interfaces.ITokenRolesProviding" />
     </class>
 
