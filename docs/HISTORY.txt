@@ -10,6 +10,9 @@ Changelog
 - Removed the "Can add" option from token role
   [davidemoro]
 
+- Modified token delete form
+  [davidemoro]
+
 
 0.5 (2012-04-27)
 ----------------

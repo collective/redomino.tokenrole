@@ -146,12 +146,10 @@ class TokenDeleteForm(form.Form):
     # Defining the fields. You can add fields together.
     fields = field.Fields(TextLine(__name__='token_display',
                                    title=ITokenInfoSchema['token_id'].title,
-                                   description=ITokenInfoSchema['token_id'].description)) + field.Fields(ITokenInfoSchema)
+                                   description=ITokenInfoSchema['token_id'].description)) + field.Fields(ITokenInfoSchema).select(*['token_id'])
 
     fields['token_id'].mode = HIDDEN_MODE
     fields['token_display'].mode = DISPLAY_MODE
-    fields['token_roles'].mode = DISPLAY_MODE
-    fields['token_end'].mode = DISPLAY_MODE
 
     def updateWidgets(self):
         super(TokenDeleteForm, self).updateWidgets()
