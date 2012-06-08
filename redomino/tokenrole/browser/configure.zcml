@@ -4,6 +4,12 @@
  xmlns:five="http://namespaces.zope.org/five"
  >
 
+  <!-- Javascripts and resources -->
+  <browser:resourceDirectory
+    name="redomino.tokenrole.resources"
+    directory="resources"
+  />
+
   <!-- Actions -->
   <adapter factory=".actions.CancelActions" />
   <adapter factory=".actions.AddActionHandler" />

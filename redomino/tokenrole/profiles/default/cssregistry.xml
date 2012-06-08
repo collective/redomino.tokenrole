@@ -1,0 +1,4 @@
+<object name="portal_css" meta_type="Stylesheets Registry">
+    <stylesheet title="" cacheable="True" compression="safe" conditionalcomment="" cookable="True" enabled="1" expression="" 
+                id="++resource++redomino.tokenrole.resources/tokenrole.css" media="all" rel="stylesheet" rendering="import"/>
+</object>

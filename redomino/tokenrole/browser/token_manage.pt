@@ -21,29 +21,32 @@
     
     <tal:define define="tokens_data view/tokens_data;">
         <tal:block tal:repeat="tokenid view/token_ids">
-            <p tal:define="odd repeat/tokenid/odd;
+            <div tal:define="odd repeat/tokenid/odd;
                            oddeven python:odd and 'odd' or 'even'
                           " 
                tal:attributes="class string:token_list ${oddeven};">
-                <a href=""
-                   tal:define="token_url string:$here_url?token=$tokenid"
-                   tal:attributes="href token_url" tal:content="token_url">url token</a>
-                <br />
-                <span i18n:translate="token_end_date">End date:</span>
-                <span tal:content="python:tokens_data[tokenid].get('token_end')">end date</span> <br />
-                <a href="" 
-                   tal:attributes="href string:$here_url/@@token_edit?form.widgets.token_id=$tokenid"
-                   i18n:translate="tokenrole_modify_token">
-                    Modify</a>,
-                <a href="" 
-                   tal:attributes="href string:$here_url/@@token_delete?form.widgets.token_id=$tokenid"
-                       i18n:translate="tokenrole_delete_token">
-                    Delete</a>,
-                <a href="" 
-                   tal:attributes="href string:$here_url/@@token_send?form.widgets.token_id=$tokenid"
-                       i18n:translate="tokenrole_send_token">
-                    Distribute Token</a>
-            </p>
+                <h3 class="tileHeadline">
+                    <a href=""
+                       tal:define="token_url string:$here_url?token=$tokenid"
+                       tal:attributes="href token_url" tal:content="token_url">url token</a>
+                </h3>
+                <div class="documentByLine">
+                    <span i18n:translate="token_end_date">End date:</span>
+                    <span tal:content="python:tokens_data[tokenid].get('token_end')">end date</span> <br />
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_edit?form.widgets.token_id=$tokenid"
+                       i18n:translate="tokenrole_modify_token">
+                        Modify</a>,
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_delete?form.widgets.token_id=$tokenid"
+                           i18n:translate="tokenrole_delete_token">
+                        Delete</a>,
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_send?form.widgets.token_id=$tokenid"
+                           i18n:translate="tokenrole_send_token">
+                        Distribute Token</a>
+                </div>
+            </div>
         </tal:block>
     </tal:define>
     

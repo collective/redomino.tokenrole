@@ -19,6 +19,12 @@ Changelog
 - Updated po files
   [davidemoro]
 
+- Registered a tokenrole.css
+  [davidemoro]
+
+- Some UX improvements on token manage view
+  [davidemoro, giacomos]
+
 
 0.5 (2012-04-27)
 ----------------
