@@ -40,7 +40,6 @@ class ItemsVocab(object):
 
 
 RolesFactory = ItemsVocab([('Reader', 'Reader', 'title_can_view', u'Can view'), 
-                           ('Contributor', 'Contributor', 'title_can_add', u'Can add'), 
                            ('Reviewer', 'Reviewer', 'title_can_review', u'Can review'), 
                            ('Editor', 'Editor', 'title_can_edit', u'Can edit'),
                           ]
