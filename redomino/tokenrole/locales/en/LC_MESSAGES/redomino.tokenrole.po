@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-08 14:01+0000\n"
+"POT-Creation-Date: 2012-06-08 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Davide Moro <davide.moro@redomino.com>\n"
 "Language-Team: Redomino <info@redomino.com>\n"
@@ -64,6 +64,11 @@ msgstr "Modify token"
 msgid "heading_tokenrole_manage"
 msgstr "Manage token"
 
+#. Default: "Token list"
+#: ./browser/token_manage.pt:20
+msgid "heading_tokenrolelisting"
+msgstr "Lista dei token"
+
 #. Default: "Roles to assing"
 #: ./interfaces.py:47
 msgid "help_roles"
@@ -102,7 +107,7 @@ msgstr "For your privacy, do not share this token with untrustworthy people"
 #. Default: "Cancel"
 #: ./browser/send_token.py:76
 msgid "label_cancel"
-msgstr ""
+msgstr "Annulla"
 
 #. Default: "Email"
 #: ./browser/interfaces.py:44
@@ -160,7 +165,7 @@ msgid "modify_token"
 msgstr "Modify token"
 
 #. Default: "New token"
-#: ./browser/token_manage.pt:42
+#: ./browser/token_manage.pt:17
 msgid "new_token"
 msgstr "Add a new token"
 
@@ -169,13 +174,8 @@ msgstr "Add a new token"
 msgid "no_changes"
 msgstr "No changes were applied."
 
-#. Default: "Back to context"
-#: ./browser/token_manage.pt:44
-msgid "token_back"
-msgstr "Go back to context"
-
 #. Default: "End date:"
-#: ./browser/token_manage.pt:21
+#: ./browser/token_manage.pt:34
 msgid "token_end_date"
 msgstr "Expiration date"
 
@@ -199,23 +199,18 @@ msgstr "Your mail could not be delivered"
 msgid "token_role_send_ok"
 msgstr "Token sent"
 
-#. Default: "URL:<br /> <a href=\"${DYNAMIC_CONTENT}\">${DYNAMIC_CONTENT}</a>"
-#: ./browser/token_manage.pt:36
-msgid "token_url"
-msgstr ""
-
 #. Default: "Delete"
-#: ./browser/token_manage.pt:27
+#: ./browser/token_manage.pt:40
 msgid "tokenrole_delete_token"
 msgstr "Delete"
 
 #. Default: "Modify"
-#: ./browser/token_manage.pt:23
+#: ./browser/token_manage.pt:36
 msgid "tokenrole_modify_token"
 msgstr "Modify"
 
 #. Default: "Distribute Token"
-#: ./browser/token_manage.pt:31
+#: ./browser/token_manage.pt:44
 msgid "tokenrole_send_token"
 msgstr "Distribute this token by e-mail"
 

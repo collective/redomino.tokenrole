@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-08 14:01+0000\n"
+"POT-Creation-Date: 2012-06-08 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Davide Moro <davide.moro@redomino.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,6 +63,11 @@ msgstr "Modifica link di condivisione"
 #: ./browser/token_manage.pt:14
 msgid "heading_tokenrole_manage"
 msgstr "Gestisci link di condivisione"
+
+#. Default: "Token list"
+#: ./browser/token_manage.pt:20
+msgid "heading_tokenrolelisting"
+msgstr ""
 
 #. Default: "Roles to assing"
 #: ./interfaces.py:47
@@ -160,7 +165,7 @@ msgid "modify_token"
 msgstr "Modifica token"
 
 #. Default: "New token"
-#: ./browser/token_manage.pt:42
+#: ./browser/token_manage.pt:17
 msgid "new_token"
 msgstr "Aggiungi un nuovo link di accesso"
 
@@ -169,13 +174,8 @@ msgstr "Aggiungi un nuovo link di accesso"
 msgid "no_changes"
 msgstr "Non sono state effettuate modifiche"
 
-#. Default: "Back to context"
-#: ./browser/token_manage.pt:44
-msgid "token_back"
-msgstr "Torna al contesto"
-
 #. Default: "End date:"
-#: ./browser/token_manage.pt:21
+#: ./browser/token_manage.pt:34
 msgid "token_end_date"
 msgstr "Data di scadenza:"
 
@@ -199,23 +199,18 @@ msgstr "Errore durante l'invio dell'email"
 msgid "token_role_send_ok"
 msgstr "Link di condivisione inviato"
 
-#. Default: "URL:<br /> <a href=\"${DYNAMIC_CONTENT}\">${DYNAMIC_CONTENT}</a>"
-#: ./browser/token_manage.pt:36
-msgid "token_url"
-msgstr ""
-
 #. Default: "Delete"
-#: ./browser/token_manage.pt:27
+#: ./browser/token_manage.pt:40
 msgid "tokenrole_delete_token"
 msgstr "Elimina"
 
 #. Default: "Modify"
-#: ./browser/token_manage.pt:23
+#: ./browser/token_manage.pt:36
 msgid "tokenrole_modify_token"
 msgstr "Modifica"
 
 #. Default: "Distribute Token"
-#: ./browser/token_manage.pt:31
+#: ./browser/token_manage.pt:44
 msgid "tokenrole_send_token"
 msgstr "Distribuisci questo link di condivisione via mail"
 

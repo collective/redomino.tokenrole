@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-08 14:01+0000\n"
+"POT-Creation-Date: 2012-06-08 14:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,6 +65,11 @@ msgstr ""
 #. Default: "Token Role management"
 #: ./browser/token_manage.pt:14
 msgid "heading_tokenrole_manage"
+msgstr ""
+
+#. Default: "Token list"
+#: ./browser/token_manage.pt:20
+msgid "heading_tokenrolelisting"
 msgstr ""
 
 #. Default: "Roles to assing"
@@ -163,7 +168,7 @@ msgid "modify_token"
 msgstr ""
 
 #. Default: "New token"
-#: ./browser/token_manage.pt:42
+#: ./browser/token_manage.pt:17
 msgid "new_token"
 msgstr ""
 
@@ -172,13 +177,8 @@ msgstr ""
 msgid "no_changes"
 msgstr ""
 
-#. Default: "Back to context"
-#: ./browser/token_manage.pt:44
-msgid "token_back"
-msgstr ""
-
 #. Default: "End date:"
-#: ./browser/token_manage.pt:21
+#: ./browser/token_manage.pt:34
 msgid "token_end_date"
 msgstr ""
 
@@ -202,23 +202,18 @@ msgstr ""
 msgid "token_role_send_ok"
 msgstr ""
 
-#. Default: "URL:<br /> <a href=\"${DYNAMIC_CONTENT}\">${DYNAMIC_CONTENT}</a>"
-#: ./browser/token_manage.pt:36
-msgid "token_url"
-msgstr ""
-
 #. Default: "Delete"
-#: ./browser/token_manage.pt:27
+#: ./browser/token_manage.pt:40
 msgid "tokenrole_delete_token"
 msgstr ""
 
 #. Default: "Modify"
-#: ./browser/token_manage.pt:23
+#: ./browser/token_manage.pt:36
 msgid "tokenrole_modify_token"
 msgstr ""
 
 #. Default: "Distribute Token"
-#: ./browser/token_manage.pt:31
+#: ./browser/token_manage.pt:44
 msgid "tokenrole_send_token"
 msgstr ""
 
