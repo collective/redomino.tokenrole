@@ -62,6 +62,7 @@ class TokenAddForm(form.AddForm):
 
     label = _(u"heading_add_token", default="TokenRole: Add token")
     formErrorsMessage = _('form_errors', default='There were some errors.')
+    noChangesMessage = _('no_changes', default='No changes were applied.')
 
     def updateWidgets(self):
         super(TokenAddForm, self).updateWidgets()
@@ -76,15 +77,16 @@ class TokenAddForm(form.AddForm):
         return context
 
     def nextURL(self):
+        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
         return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
 
     def update(self):
         self.buttons.values()[0].title = _(u'add_token', default=u"Add token")
         super(TokenAddForm, self).update()
 
+
 # wrap the form with plone.app.z3cform's Form wrapper
 TokenAddFormView = layout.wrap_form(TokenAddForm)
-
 
 
 class TokenEditForm(form.EditForm):
@@ -110,7 +112,7 @@ class TokenEditForm(form.EditForm):
     def nextURL(self):
         context = self.getContent()
         data, errors = self.extractData()
-        return "%s/@@token_edit?form.widgets.token_id=%s" % (context.absolute_url(), data['token_id']) 
+        return "%s/@@token_manage" % (context.absolute_url()) 
 
     @button.buttonAndHandler(_(u'modify_token', default=u"Modify token"), name='apply')
     def handleApply(self, action):
@@ -129,6 +131,13 @@ class TokenEditForm(form.EditForm):
             IStatusMessage(self.request).addStatusMessage(self.status, type='info')
             self.request.response.redirect(self.nextURL())
         return ''
+
+    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    def handle_cancel(self, action):
+        self.status = self.noChangesMessage
+        self.request.response.redirect(self.nextURL())
+        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        return
 
 
 # wrap the form with plone.app.z3cform's Form wrapper
@@ -155,6 +164,11 @@ class TokenDeleteForm(form.Form):
         super(TokenDeleteForm, self).updateWidgets()
         self.widgets['token_display'].value = self.request.get('form.widgets.token_id')
 
+    def nextURL(self):
+        context = self.getContent()
+        data, errors = self.extractData()
+        return "%s/@@token_manage" % (context.absolute_url()) 
+
     # Handler for the submit action
     @button.buttonAndHandler(_(u'delete_token', default=u'Delete token'), name='delete')
     def handle_submit(self, action):
@@ -169,7 +183,13 @@ class TokenDeleteForm(form.Form):
             del tr_annotate.token_dict[data['token_id']]
 
         self.status = _(u'delete_success', default=u"Token removed")
-        self.request.response.redirect("%s/@@token_manage" % self.context.absolute_url())
+        self.request.response.redirect("%s/@@token_manage" % self.nextURL())
+        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+
+    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    def handle_cancel(self, action):
+        self.status = self.noChangesMessage
+        self.request.response.redirect(self.nextURL())
         IStatusMessage(self.request).addStatusMessage(self.status, type='info')
 
 

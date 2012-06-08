@@ -13,6 +13,9 @@ Changelog
 - Modified token delete form
   [davidemoro]
 
+- Modified all z3c forms, added a Cancel button
+  [davidemoro]
+
 
 0.5 (2012-04-27)
 ----------------

@@ -62,7 +62,6 @@ class TokenSendForm(form.Form):
     # Handler for the submit action
     @button.buttonAndHandler(_(u'label_send_token', default=u'Send'), name='send')
     def handle_submit(self, action):
-        context = self.getContent()
         data, errors = self.extractData()
         if errors:
             self.status = _('token_role_send_ko', default=u'An error has occurred')
@@ -72,8 +71,17 @@ class TokenSendForm(form.Form):
         # set the status message
         self.status = self.send_mail(data)
 
-        self.request.response.redirect('%s/%s' % (context.absolute_url(), '@@token_manage'))
+        self.request.response.redirect(self.nextURL())
+
+    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    def handle_cancel(self, action):
+        self.status = self.noChangesMessage
+        self.request.response.redirect(self.nextURL())
+        return
+
+    def nextURL(self):
         IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
 
     def send_mail(self, data):
         # Collect mail settings
