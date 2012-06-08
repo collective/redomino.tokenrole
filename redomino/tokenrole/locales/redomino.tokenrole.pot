@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-04-27 13:30+0000\n"
+"POT-Creation-Date: 2012-06-08 14:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,28 +18,27 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #. Default: "Add token"
-#: ./browser/token_manage.py:82
+#: ./browser/token_manage.py:84
 msgid "add_token"
 msgstr ""
 
 #. Default: "Data successfully updated."
 #: ./browser/send_token.py:48
-#: ./browser/token_manage.py:102
 msgid "data_saved"
 msgstr ""
 
 #. Default: "An error has occurred"
-#: ./browser/token_manage.py:165
+#: ./browser/token_manage.py:177
 msgid "delete_error"
 msgstr ""
 
 #. Default: "Token removed"
-#: ./browser/token_manage.py:173
+#: ./browser/token_manage.py:185
 msgid "delete_success"
 msgstr ""
 
 #. Default: "Delete token"
-#: ./browser/token_manage.py:161
+#: ./browser/token_manage.py:173
 msgid "delete_token"
 msgstr ""
 
@@ -54,12 +53,12 @@ msgid "heading_add_token"
 msgstr ""
 
 #. Default: "TokenRole: Delete token"
-#: ./browser/token_manage.py:142
+#: ./browser/token_manage.py:151
 msgid "heading_delete_token"
 msgstr ""
 
 #. Default: "TokenRole: Modify token"
-#: ./browser/token_manage.py:101
+#: ./browser/token_manage.py:103
 msgid "heading_edit_token"
 msgstr ""
 
@@ -101,6 +100,11 @@ msgstr ""
 #. Default: "This token is going to be distributed."
 #: ./browser/interfaces.py:29
 msgid "help_tokenrole_token_id"
+msgstr ""
+
+#. Default: "Cancel"
+#: ./browser/send_token.py:76
+msgid "label_cancel"
 msgstr ""
 
 #. Default: "Email"
@@ -154,7 +158,7 @@ msgid "label_tokenrole_token_id"
 msgstr ""
 
 #. Default: "Modify token"
-#: ./browser/token_manage.py:115
+#: ./browser/token_manage.py:117
 msgid "modify_token"
 msgstr ""
 
@@ -165,7 +169,6 @@ msgstr ""
 
 #. Default: "No changes were applied."
 #: ./browser/send_token.py:49
-#: ./browser/token_manage.py:103
 msgid "no_changes"
 msgstr ""
 
@@ -180,22 +183,22 @@ msgid "token_end_date"
 msgstr ""
 
 #. Default: "${text}s<br/>Date: ${date}s<br/>Url: <a href=\"${url}s\">Access<a/> "
-#: ./browser/send_token.py:81
+#: ./browser/send_token.py:89
 msgid "token_message_text"
 msgstr ""
 
 #. Default: "An error has occurred"
-#: ./browser/send_token.py:68
+#: ./browser/send_token.py:67
 msgid "token_role_send_ko"
 msgstr ""
 
 #. Default: "Mail error"
-#: ./browser/send_token.py:110
+#: ./browser/send_token.py:118
 msgid "token_role_send_ko_mail"
 msgstr ""
 
 #. Default: "Token sent"
-#: ./browser/send_token.py:114
+#: ./browser/send_token.py:122
 msgid "token_role_send_ok"
 msgstr ""
 

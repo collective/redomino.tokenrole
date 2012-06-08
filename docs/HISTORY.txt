@@ -16,6 +16,9 @@ Changelog
 - Modified all z3c forms, added a Cancel button
   [davidemoro]
 
+- Updated po files
+  [davidemoro]
+
 
 0.5 (2012-04-27)
 ----------------
