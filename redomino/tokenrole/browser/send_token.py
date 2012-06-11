@@ -78,8 +78,8 @@ class TokenSendForm(form.Form):
     def send_mail(self, data):
         # Collect mail settings
         context = self.getContent()
-        message = _('token_message_text', default="""${text}s<br/>Date: ${date}s<br/>Url: <a href="${url}s">Access<a/> """)
-        message = context.utranslate(message)
+#        message = _('token_message_text', default="""${text}s<br/>Date: ${date}s<br/>Url: <a href="${url}s">Access<a/> """)
+#        message = context.utranslate(message)
         portal = getMultiAdapter((context, self.request), name="plone_portal_state").portal()
         mailhost = getToolByName(context, 'MailHost')
 
@@ -96,14 +96,14 @@ class TokenSendForm(form.Form):
         end_date = context.toLocalizedTime(tr_annotate.token_dict[token_id]['token_end'])
 
 
-        message = message.replace('${text}s', text)
-        message = message.replace('${date}s', str(end_date))
+#        message = message.replace('${text}s', text)
+        message = text.replace('${date}s', str(end_date))
         message = message.replace('${url}s', url)
 
         try:
             for email_recipient in email_list:
                 mailhost.secureSend(message, email_recipient, from_address,
-                                    subject=subject, subtype='html',
+                                    subject=subject,
                                     charset=email_charset, debug=False,
                                    )
         except (MailHostError, SMTPException):
