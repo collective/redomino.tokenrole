@@ -14,6 +14,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
+import time
 import datetime
 
 from zope.schema import TextLine
@@ -58,8 +59,28 @@ class TokenManageView(BrowserView):
 
     def get_local_date(self, date):
         util = getToolByName(self.context, 'translation_service')
-        local_date = util.ulocalized_time(date, long_format = None, time_only = None, context = self.context, domain='plonelocales')
+        local_date = util.ulocalized_time(date, long_format = True, time_only = None, context = self.context, domain='plonelocales')
         return local_date
+
+    def get_time_deltas(self):
+
+        deltas = []
+
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(hours=2)).timetuple())
+        deltas.append(('+2h', tmp))
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(hours=4)).timetuple())
+        deltas.append(('+4h', tmp))
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=1)).timetuple())
+        deltas.append(('+1d', tmp))
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=7)).timetuple())
+        deltas.append(('+7d', tmp))
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=15)).timetuple())
+        deltas.append(('+15d', tmp))
+        tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=30)).timetuple())
+        deltas.append(('+30d', tmp))
+
+        return deltas
+
 
 
 
@@ -80,7 +101,12 @@ class TokenAddForm(form.AddForm):
         self.widgets['token_id'].value = make_uuid(self.getContent().getId())
 
         end_date = datetime.datetime.now() + datetime.timedelta(DEFAULT_TOKEN_DAYS)
-        self.widgets['token_end'].value = (end_date.year, end_date.month, end_date.day, 0, 0)
+        try:
+            delta = self.context.REQUEST.get('t', None)
+            delta_dt = datetime.datetime.fromtimestamp(float(delta))
+            self.widgets['token_end'].value = (delta_dt.year, delta_dt.month, delta_dt.day, delta_dt.hour, delta_dt.minute)
+        except:
+            self.widgets['token_end'].value = (end_date.year, end_date.month, end_date.day, 0, 0)
 
     def createAndAdd(self, data):
         context = self.getContent()
