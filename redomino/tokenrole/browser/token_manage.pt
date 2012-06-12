@@ -16,11 +16,13 @@
 
     <strong><a href="" tal:attributes="href string:$here_url/@@token_add" i18n:translate="new_token">New token</a>
     </strong>    
+    (
     <a href="#" tal:repeat="delta python:view.get_time_deltas()"
         tal:content="python:delta[0]"
         tal:attributes="href python: '%s/@@token_add?t=%s' % (here_url, str(delta[1]))"
     >
     </a>
+    )
 
     <h2 i18n:translate="heading_tokenrolelisting">Token list</h2>
     
