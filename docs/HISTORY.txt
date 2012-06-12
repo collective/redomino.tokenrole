@@ -19,7 +19,7 @@ Changelog
 - Updated po files
   [davidemoro]
 
-- Registered a tokenrole.css
+- Registered a tokenrole.css (if you are upgrading redomino.tokenrole to this versione you need to reinstall it)
   [davidemoro]
 
 - Some UX improvements on token manage view
