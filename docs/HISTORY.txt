@@ -4,8 +4,26 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Missing action "share with link" for folders, fixed.
+- Token role enabled just for non-folderish items.
   [davidemoro]
+
+- Removed the "Can add" option from token role
+  [davidemoro]
+
+- Modified token delete form
+  [davidemoro]
+
+- Modified all z3c forms, added a Cancel button
+  [davidemoro]
+
+- Updated po files
+  [davidemoro]
+
+- Registered a tokenrole.css
+  [davidemoro]
+
+- Some UX improvements on token manage view
+  [davidemoro, giacomos]
 
 
 0.5 (2012-04-27)

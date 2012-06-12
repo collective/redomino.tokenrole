@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-11 13:18+0000\n"
+"POT-Creation-Date: 2012-06-12 07:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Davide Moro <davide.moro@redomino.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,48 +15,48 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #. Default: "Add token"
-#: ../browser/token_manage.py:82
+#: ../browser/token_manage.py:89
 msgid "add_token"
 msgstr "Aggiungi link di condivisione"
 
 #. Default: "Data successfully updated."
 #: ../browser/send_token.py:48
-#: ../browser/token_manage.py:102
+#: ../browser/token_manage.py:109
 msgid "data_saved"
 msgstr "Modifiche memorizzate"
 
 #. Default: "An error has occurred"
-#: ../browser/token_manage.py:165
+#: ../browser/token_manage.py:182
 msgid "delete_error"
 msgstr "Si è verificato un errore"
 
 #. Default: "Token removed"
-#: ../browser/token_manage.py:173
+#: ../browser/token_manage.py:190
 msgid "delete_success"
 msgstr "Link di condivisione rimosso"
 
 #. Default: "Delete token"
-#: ../browser/token_manage.py:161
+#: ../browser/token_manage.py:178
 msgid "delete_token"
 msgstr "Elimina link di condivisione"
 
 #. Default: "There were some errors."
-#: ../browser/token_manage.py:64
+#: ../browser/token_manage.py:69
 msgid "form_errors"
 msgstr "Si è verificato un errore"
 
 #. Default: "TokenRole: Add token"
-#: ../browser/token_manage.py:63
+#: ../browser/token_manage.py:68
 msgid "heading_add_token"
 msgstr "Aggiungi un nuovo link di condivisione"
 
 #. Default: "TokenRole: Delete token"
-#: ../browser/token_manage.py:142
+#: ../browser/token_manage.py:156
 msgid "heading_delete_token"
 msgstr "Elimina link di condivisione"
 
 #. Default: "TokenRole: Modify token"
-#: ../browser/token_manage.py:101
+#: ../browser/token_manage.py:108
 msgid "heading_edit_token"
 msgstr "Modifica link di condivisione"
 
@@ -64,6 +64,11 @@ msgstr "Modifica link di condivisione"
 #: ../browser/token_manage.pt:14
 msgid "heading_tokenrole_manage"
 msgstr "Gestisci link di condivisione"
+
+#. Default: "Token list"
+#: ../browser/token_manage.pt:20
+msgid "heading_tokenrolelisting"
+msgstr "Elenco dei token"
 
 #. Default: "Roles to assing"
 #: ../interfaces.py:47
@@ -92,7 +97,6 @@ msgstr "Inserici il soggetto della mail che vuoi inviare"
 
 #. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens."
 #: ../browser/interfaces.py:37
-#, fuzzy
 msgid "help_tokenrole_text"
 msgstr "Digita qui il testo del messaggio che vuoi inviare: al fondo verranno accodati automaticamente il link di condivisione con il token di accesso e la data di scadenza del link. Attenzione a non rimuovere completamente i token ${date}s e ${url}s o il messaggio non sarà completo."
 
@@ -101,10 +105,21 @@ msgstr "Digita qui il testo del messaggio che vuoi inviare: al fondo verranno ac
 msgid "help_tokenrole_token_id"
 msgstr "Per la tua sicurezza non comunicare a persone non fidate questo token di accesso"
 
+#. Default: "Cancel"
+#: ../browser/send_token.py:76
+#: ../browser/token_manage.py:140
+msgid "label_cancel"
+msgstr "Annulla"
+
 #. Default: "Email"
 #: ../browser/interfaces.py:45
 msgid "label_email"
 msgstr "Email"
+
+#. Default: "Roles"
+#: ../browser/token_manage.pt:36
+msgid "label_role"
+msgstr "Ruoli"
 
 #. Default: "Roles"
 #: ../interfaces.py:46
@@ -152,63 +167,53 @@ msgid "label_tokenrole_token_id"
 msgstr "Token id"
 
 #. Default: "Modify token"
-#: ../browser/token_manage.py:115
+#: ../browser/token_manage.py:122
 msgid "modify_token"
 msgstr "Modifica token"
 
 #. Default: "New token"
-#: ../browser/token_manage.pt:42
+#: ../browser/token_manage.pt:17
 msgid "new_token"
 msgstr "Aggiungi un nuovo link di accesso"
 
 #. Default: "No changes were applied."
 #: ../browser/send_token.py:49
-#: ../browser/token_manage.py:103
+#: ../browser/token_manage.py:70
 msgid "no_changes"
 msgstr "Non sono state effettuate modifiche"
 
-#. Default: "Back to context"
-#: ../browser/token_manage.pt:44
-msgid "token_back"
-msgstr "Torna al contesto"
-
 #. Default: "End date:"
-#: ../browser/token_manage.pt:21
+#: ../browser/token_manage.pt:34
 msgid "token_end_date"
 msgstr "Data di scadenza:"
 
 #. Default: "An error has occurred"
-#: ../browser/send_token.py:68
+#: ../browser/send_token.py:67
 msgid "token_role_send_ko"
 msgstr "Si è verificato un errore durante l'invio"
 
 #. Default: "Mail error"
-#: ../browser/send_token.py:110
+#: ../browser/send_token.py:120
 msgid "token_role_send_ko_mail"
 msgstr "Errore durante l'invio dell'email"
 
 #. Default: "Token sent"
-#: ../browser/send_token.py:114
+#: ../browser/send_token.py:124
 msgid "token_role_send_ok"
 msgstr "Link di condivisione inviato"
 
-#. Default: "URL:<br /> <a href=\"${DYNAMIC_CONTENT}\">${DYNAMIC_CONTENT}</a>"
-#: ../browser/token_manage.pt:36
-msgid "token_url"
-msgstr ""
-
 #. Default: "Delete"
-#: ../browser/token_manage.pt:27
+#: ../browser/token_manage.pt:44
 msgid "tokenrole_delete_token"
 msgstr "Elimina"
 
 #. Default: "Modify"
-#: ../browser/token_manage.pt:23
+#: ../browser/token_manage.pt:39
 msgid "tokenrole_modify_token"
 msgstr "Modifica"
 
 #. Default: "Distribute Token"
-#: ../browser/token_manage.pt:31
+#: ../browser/token_manage.pt:49
 msgid "tokenrole_send_token"
 msgstr "Distribuisci questo link di condivisione via mail"
 

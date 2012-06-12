@@ -15,7 +15,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
-
+import time
 from smtplib import SMTPException
 
 from zope.schema import TextLine
@@ -62,7 +62,6 @@ class TokenSendForm(form.Form):
     # Handler for the submit action
     @button.buttonAndHandler(_(u'label_send_token', default=u'Send'), name='send')
     def handle_submit(self, action):
-        context = self.getContent()
         data, errors = self.extractData()
         if errors:
             self.status = _('token_role_send_ko', default=u'An error has occurred')
@@ -72,8 +71,17 @@ class TokenSendForm(form.Form):
         # set the status message
         self.status = self.send_mail(data)
 
-        self.request.response.redirect('%s/%s' % (context.absolute_url(), '@@token_manage'))
+        self.request.response.redirect(self.nextURL())
+
+    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    def handle_cancel(self, action):
+        self.status = self.noChangesMessage
+        self.request.response.redirect(self.nextURL())
+        return
+
+    def nextURL(self):
         IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
 
     def send_mail(self, data):
         # Collect mail settings
@@ -93,7 +101,9 @@ class TokenSendForm(form.Form):
         from_address = portal.getProperty('email_from_address')
         
         tr_annotate = ITokenRolesAnnotate(context)
-        end_date = context.toLocalizedTime(tr_annotate.token_dict[token_id]['token_end'])
+#        end_date = context.toLocalizedTime(tr_annotate.token_dict[token_id]['token_end'])
+        util = getToolByName(self.context, 'translation_service')
+        end_date = util.ulocalized_time(time.time(), long_format = None, time_only = None, context = self.context, domain='plonelocales')
 
 
 #        message = message.replace('${text}s', text)

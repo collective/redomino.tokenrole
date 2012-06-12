@@ -13,37 +13,49 @@
   <div metal:fill-slot="main" tal:define="here_url context/@@plone_context_state/object_url;">
     <h1 class="documentFirstHeading"
         i18n:translate="heading_tokenrole_manage">Token Role management</h1>
-    
-    <ul tal:define="tokens_data view/tokens_data;">
-    <tal:block tal:repeat="tokenid view/token_ids">
-        <li>
-            <strong tal:content="tokenid" >token id</strong><br />
-            <span i18n:translate="token_end_date">End date:</span>
-            <span tal:content="python:tokens_data[tokenid].get('token_end')">end date</span> <br />
-            <a href="" 
-               tal:attributes="href string:$here_url/@@token_edit?form.widgets.token_id=$tokenid"
-               i18n:translate="tokenrole_modify_token">
-                Modify</a>,
-            <a href="" 
-               tal:attributes="href string:$here_url/@@token_delete?form.widgets.token_id=$tokenid"
-                   i18n:translate="tokenrole_delete_token">
-                Delete</a>,
-            <a href="" 
-               tal:attributes="href string:$here_url/@@token_send?form.widgets.token_id=$tokenid"
-                   i18n:translate="tokenrole_send_token">
-                Distribute Token</a>
-            <p i18n:translate="token_url">URL:<br/>
-                <a href="" tal:define="token_url string:$here_url?token=$tokenid"
-                   tal:attributes="href token_url" tal:content="token_url">url token</a></p>
-        </li>
-    </tal:block>
-    </ul>
-    
+
     <strong><a href="" tal:attributes="href string:$here_url/@@token_add" i18n:translate="new_token">New token</a>
     </strong>    
-    <strong tal:condition="nothing"><a href="" i18n:translate="token_back"
-               tal:attributes="href string:$here_url">Back to context</a>
-    </strong>
+
+    <h2 i18n:translate="heading_tokenrolelisting">Token list</h2>
+    
+    <tal:define define="tokens_data view/tokens_data;">
+        <tal:block tal:repeat="tokenid view/token_ids">
+            <div tal:define="odd repeat/tokenid/odd;
+                           oddeven python:odd and 'odd' or 'even'
+                          " 
+               tal:attributes="class string:token_list ${oddeven};">
+                <h3 class="tileHeadline">
+                    <a href=""
+                       tal:define="token_url string:$here_url?token=$tokenid"
+                       tal:attributes="href token_url" tal:content="token_url">url token</a>
+                </h3>
+                <div class="documentByLine">
+                    <span i18n:translate="token_end_date">End date:</span>
+                    <span tal:content="python:view.get_local_date(tokens_data[tokenid].get('token_end'))">end date</span> <br />
+                    <span i18n:translate="label_role">Roles</span>:
+                    <span tal:content="python: ', '.join([view.get_role_i18n(role) for role in tokens_data[tokenid]['token_roles']])"></span>
+                    <br />
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_edit?form.widgets.token_id=$tokenid"
+                       title="Modify" class="tokenrole_action modify"
+                       i18n:attributes="title tokenrole_modify_token">
+                        <img src="#" tal:attributes="src string:${context/portal_url}/++resource++redomino.tokenrole.resources/modify.png"></a>
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_delete?form.widgets.token_id=$tokenid"
+                       title="Delete" class="tokenrole_action delete"
+                       i18n:attributes="title tokenrole_delete_token">
+                        <img src="#" tal:attributes="src string:${context/portal_url}/++resource++redomino.tokenrole.resources/delete.png"></a>
+                    <a href="" 
+                       tal:attributes="href string:$here_url/@@token_send?form.widgets.token_id=$tokenid"
+                       title="Distribute Token" class="tokenrole_action distribute"
+                       i18n:attributes="title tokenrole_send_token">
+                        <img src="#" tal:attributes="src string:${context/portal_url}/++resource++redomino.tokenrole.resources/email.png"></a>
+                </div>
+            </div>
+        </tal:block>
+    </tal:define>
+    
 </div>
 </body>
 </html>
