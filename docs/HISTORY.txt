@@ -31,6 +31,9 @@ Changelog
 - Some UX improvements on token manage view
   [davidemoro, giacomos]
 
+- Share token via email. Now the message text is configurable by the user
+  [giacomos]
+
 
 0.5 (2012-04-27)
 ----------------
