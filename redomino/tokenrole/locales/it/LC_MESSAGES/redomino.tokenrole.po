@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-12 07:08+0000\n"
+"POT-Creation-Date: 2012-06-12 10:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Davide Moro <davide.moro@redomino.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,48 +15,56 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #. Default: "Add token"
-#: ../browser/token_manage.py:89
+#: ../browser/token_manage.py:123
 msgid "add_token"
 msgstr "Aggiungi link di condivisione"
 
 #. Default: "Data successfully updated."
 #: ../browser/send_token.py:48
-#: ../browser/token_manage.py:109
+#: ../browser/token_manage.py:96
 msgid "data_saved"
 msgstr "Modifiche memorizzate"
 
+#: ../browser/token_manage.py:74
+msgid "day"
+msgstr "giorno"
+
+#: ../browser/token_manage.py:76
+msgid "days"
+msgstr "giorni"
+
 #. Default: "An error has occurred"
-#: ../browser/token_manage.py:182
+#: ../browser/token_manage.py:216
 msgid "delete_error"
 msgstr "Si è verificato un errore"
 
 #. Default: "Token removed"
-#: ../browser/token_manage.py:190
+#: ../browser/token_manage.py:224
 msgid "delete_success"
 msgstr "Link di condivisione rimosso"
 
 #. Default: "Delete token"
-#: ../browser/token_manage.py:178
+#: ../browser/token_manage.py:212
 msgid "delete_token"
 msgstr "Elimina link di condivisione"
 
 #. Default: "There were some errors."
-#: ../browser/token_manage.py:69
+#: ../browser/token_manage.py:97
 msgid "form_errors"
 msgstr "Si è verificato un errore"
 
 #. Default: "TokenRole: Add token"
-#: ../browser/token_manage.py:68
+#: ../browser/token_manage.py:95
 msgid "heading_add_token"
 msgstr "Aggiungi un nuovo link di condivisione"
 
 #. Default: "TokenRole: Delete token"
-#: ../browser/token_manage.py:156
+#: ../browser/token_manage.py:190
 msgid "heading_delete_token"
 msgstr "Elimina link di condivisione"
 
 #. Default: "TokenRole: Modify token"
-#: ../browser/token_manage.py:108
+#: ../browser/token_manage.py:142
 msgid "heading_edit_token"
 msgstr "Modifica link di condivisione"
 
@@ -66,7 +74,7 @@ msgid "heading_tokenrole_manage"
 msgstr "Gestisci link di condivisione"
 
 #. Default: "Token list"
-#: ../browser/token_manage.pt:20
+#: ../browser/token_manage.pt:27
 msgid "heading_tokenrolelisting"
 msgstr "Elenco dei token"
 
@@ -105,9 +113,13 @@ msgstr "Digita qui il testo del messaggio che vuoi inviare: al fondo verranno ac
 msgid "help_tokenrole_token_id"
 msgstr "Per la tua sicurezza non comunicare a persone non fidate questo token di accesso"
 
+#: ../browser/token_manage.py:70
+msgid "hours"
+msgstr "ore"
+
 #. Default: "Cancel"
 #: ../browser/send_token.py:76
-#: ../browser/token_manage.py:140
+#: ../browser/token_manage.py:174
 msgid "label_cancel"
 msgstr "Annulla"
 
@@ -117,7 +129,7 @@ msgid "label_email"
 msgstr "Email"
 
 #. Default: "Roles"
-#: ../browser/token_manage.pt:36
+#: ../browser/token_manage.pt:44
 msgid "label_role"
 msgstr "Ruoli"
 
@@ -167,7 +179,7 @@ msgid "label_tokenrole_token_id"
 msgstr "Token id"
 
 #. Default: "Modify token"
-#: ../browser/token_manage.py:122
+#: ../browser/token_manage.py:156
 msgid "modify_token"
 msgstr "Modifica token"
 
@@ -178,12 +190,12 @@ msgstr "Aggiungi un nuovo link di accesso"
 
 #. Default: "No changes were applied."
 #: ../browser/send_token.py:49
-#: ../browser/token_manage.py:70
+#: ../browser/token_manage.py:98
 msgid "no_changes"
 msgstr "Non sono state effettuate modifiche"
 
 #. Default: "End date:"
-#: ../browser/token_manage.pt:34
+#: ../browser/token_manage.pt:42
 msgid "token_end_date"
 msgstr "Data di scadenza:"
 
@@ -203,17 +215,17 @@ msgid "token_role_send_ok"
 msgstr "Link di condivisione inviato"
 
 #. Default: "Delete"
-#: ../browser/token_manage.pt:44
+#: ../browser/token_manage.pt:52
 msgid "tokenrole_delete_token"
 msgstr "Elimina"
 
 #. Default: "Modify"
-#: ../browser/token_manage.pt:39
+#: ../browser/token_manage.pt:47
 msgid "tokenrole_modify_token"
 msgstr "Modifica"
 
 #. Default: "Distribute Token"
-#: ../browser/token_manage.pt:49
+#: ../browser/token_manage.pt:57
 msgid "tokenrole_send_token"
 msgstr "Distribuisci questo link di condivisione via mail"
 

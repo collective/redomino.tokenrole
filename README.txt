@@ -29,6 +29,11 @@ You can manage the token role (edit, delete, modify or distribute via mail).
 The default policy which comes with redomino.tokenrole implement this annotating
 information on the context, managed through a browser view.
 
+.. figure:: https://github.com/redomino/redomino.tokenrole/raw/master/docs/resources/manage_tokens.png
+   :align: center
+
+   Tokens management interface
+
 Usage
 -----
 

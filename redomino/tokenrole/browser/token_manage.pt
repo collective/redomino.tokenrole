@@ -24,7 +24,8 @@
     </a>
     )
 
-    <h2 i18n:translate="heading_tokenrolelisting">Token list</h2>
+    <h2 i18n:translate="heading_tokenrolelisting"
+        tal:condition="python: len(view.tokens_data())">Token list</h2>
     
     <tal:define define="tokens_data view/tokens_data;">
         <tal:block tal:repeat="tokenid view/token_ids">

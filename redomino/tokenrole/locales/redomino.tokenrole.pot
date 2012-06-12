@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-12 07:08+0000\n"
+"POT-Creation-Date: 2012-06-12 10:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,48 +18,56 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #. Default: "Add token"
-#: ../browser/token_manage.py:89
+#: ../browser/token_manage.py:123
 msgid "add_token"
 msgstr ""
 
 #. Default: "Data successfully updated."
 #: ../browser/send_token.py:48
-#: ../browser/token_manage.py:109
+#: ../browser/token_manage.py:96
 msgid "data_saved"
 msgstr ""
 
+#: ../browser/token_manage.py:74
+msgid "day"
+msgstr ""
+
+#: ../browser/token_manage.py:76
+msgid "days"
+msgstr ""
+
 #. Default: "An error has occurred"
-#: ../browser/token_manage.py:182
+#: ../browser/token_manage.py:216
 msgid "delete_error"
 msgstr ""
 
 #. Default: "Token removed"
-#: ../browser/token_manage.py:190
+#: ../browser/token_manage.py:224
 msgid "delete_success"
 msgstr ""
 
 #. Default: "Delete token"
-#: ../browser/token_manage.py:178
+#: ../browser/token_manage.py:212
 msgid "delete_token"
 msgstr ""
 
 #. Default: "There were some errors."
-#: ../browser/token_manage.py:69
+#: ../browser/token_manage.py:97
 msgid "form_errors"
 msgstr ""
 
 #. Default: "TokenRole: Add token"
-#: ../browser/token_manage.py:68
+#: ../browser/token_manage.py:95
 msgid "heading_add_token"
 msgstr ""
 
 #. Default: "TokenRole: Delete token"
-#: ../browser/token_manage.py:156
+#: ../browser/token_manage.py:190
 msgid "heading_delete_token"
 msgstr ""
 
 #. Default: "TokenRole: Modify token"
-#: ../browser/token_manage.py:108
+#: ../browser/token_manage.py:142
 msgid "heading_edit_token"
 msgstr ""
 
@@ -69,7 +77,7 @@ msgid "heading_tokenrole_manage"
 msgstr ""
 
 #. Default: "Token list"
-#: ../browser/token_manage.pt:20
+#: ../browser/token_manage.pt:27
 msgid "heading_tokenrolelisting"
 msgstr ""
 
@@ -108,9 +116,13 @@ msgstr ""
 msgid "help_tokenrole_token_id"
 msgstr ""
 
+#: ../browser/token_manage.py:70
+msgid "hours"
+msgstr ""
+
 #. Default: "Cancel"
 #: ../browser/send_token.py:76
-#: ../browser/token_manage.py:140
+#: ../browser/token_manage.py:174
 msgid "label_cancel"
 msgstr ""
 
@@ -120,7 +132,7 @@ msgid "label_email"
 msgstr ""
 
 #. Default: "Roles"
-#: ../browser/token_manage.pt:36
+#: ../browser/token_manage.pt:44
 msgid "label_role"
 msgstr ""
 
@@ -170,7 +182,7 @@ msgid "label_tokenrole_token_id"
 msgstr ""
 
 #. Default: "Modify token"
-#: ../browser/token_manage.py:122
+#: ../browser/token_manage.py:156
 msgid "modify_token"
 msgstr ""
 
@@ -181,12 +193,12 @@ msgstr ""
 
 #. Default: "No changes were applied."
 #: ../browser/send_token.py:49
-#: ../browser/token_manage.py:70
+#: ../browser/token_manage.py:98
 msgid "no_changes"
 msgstr ""
 
 #. Default: "End date:"
-#: ../browser/token_manage.pt:34
+#: ../browser/token_manage.pt:42
 msgid "token_end_date"
 msgstr ""
 
@@ -206,17 +218,17 @@ msgid "token_role_send_ok"
 msgstr ""
 
 #. Default: "Delete"
-#: ../browser/token_manage.pt:44
+#: ../browser/token_manage.pt:52
 msgid "tokenrole_delete_token"
 msgstr ""
 
 #. Default: "Modify"
-#: ../browser/token_manage.pt:39
+#: ../browser/token_manage.pt:47
 msgid "tokenrole_modify_token"
 msgstr ""
 
 #. Default: "Distribute Token"
-#: ../browser/token_manage.pt:49
+#: ../browser/token_manage.pt:57
 msgid "tokenrole_send_token"
 msgstr ""
 

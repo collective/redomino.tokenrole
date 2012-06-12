@@ -67,17 +67,17 @@ class TokenManageView(BrowserView):
         deltas = []
 
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(hours=2)).timetuple())
-        deltas.append(('+2h', tmp))
+        deltas.append(('+2' + self.context.translate(_(u'hours')), tmp))
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(hours=4)).timetuple())
-        deltas.append(('+4h', tmp))
+        deltas.append(('+4' + self.context.translate(_(u'hours')), tmp))
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=1)).timetuple())
-        deltas.append(('+1d', tmp))
+        deltas.append(('+1' + self.context.translate(_(u'day')), tmp))
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=7)).timetuple())
-        deltas.append(('+7d', tmp))
+        deltas.append(('+7' + self.context.translate(_(u'days')), tmp))
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=15)).timetuple())
-        deltas.append(('+15d', tmp))
+        deltas.append(('+15' + self.context.translate(_(u'days')), tmp))
         tmp = time.mktime((datetime.datetime.now() + datetime.timedelta(days=30)).timetuple())
-        deltas.append(('+30d', tmp))
+        deltas.append(('+30' + self.context.translate(_(u'days')), tmp))
 
         return deltas
 
@@ -93,6 +93,7 @@ class TokenAddForm(form.AddForm):
     fields['token_roles'].widgetFactory[INPUT_MODE] = CheckBoxFieldWidget
 
     label = _(u"heading_add_token", default="TokenRole: Add token")
+    successMessage = _('data_saved', default='Data successfully updated.')
     formErrorsMessage = _('form_errors', default='There were some errors.')
     noChangesMessage = _('no_changes', default='No changes were applied.')
 
@@ -111,6 +112,7 @@ class TokenAddForm(form.AddForm):
     def createAndAdd(self, data):
         context = self.getContent()
         applyChanges(self, context, data)
+        self.status = self.successMessage
         return context
 
     def nextURL(self):
@@ -220,7 +222,7 @@ class TokenDeleteForm(form.Form):
             del tr_annotate.token_dict[data['token_id']]
 
         self.status = _(u'delete_success', default=u"Token removed")
-        self.request.response.redirect("%s/@@token_manage" % self.nextURL())
+        self.request.response.redirect(self.nextURL())
         IStatusMessage(self.request).addStatusMessage(self.status, type='info')
 
     @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
