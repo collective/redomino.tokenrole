@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.7 (unreleased)
+0.7 (2012-06-14)
 ----------------
 
 - i18n improved and fixed 
