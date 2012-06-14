@@ -34,12 +34,12 @@ class ITokenSendForm(Interface):
                               required = True,
                              )
     text = schema.Text(title = _(u'label_tokenrole_text', default=u'Text'),
-                       description = _(u'help_tokenrole_text', default=u'Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens.'),
+                       description = _(u'help_tokenrole_text', default=u"Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens or the email won't be complete."),
                        default = u'Date: ${date}s\nUrl: ${url}s',
                        required = True,
                       )
     email_list = schema.List(title = _(u'label_tokenrole_email_list', default=u'List of emails'),
-                             description = _(u'help_tokenrole_email_list', default=u'Please enter here the list of emails.'),
+                             description = _(u'help_tokenrole_email_list', default=u'Please enter here the list of emails. One per line'),
                              required = True,
                              default = [],
                              value_type = schema.ASCIILine(title=_(u'label_email', default="Email"), constraint=isEmail),

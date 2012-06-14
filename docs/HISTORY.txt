@@ -4,7 +4,8 @@ Changelog
 0.7 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- i18n improved and fixed 
+  [giacomos]
 
 
 0.6 (2012-06-12)

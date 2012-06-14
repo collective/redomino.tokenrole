@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-12 10:46+0000\n"
+"POT-Creation-Date: 2012-06-14 10:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: redomino.tokenrole\n"
+
+#: ../browser/actions.py:36
+msgid "Cancel"
+msgstr ""
 
 #. Default: "Add token"
 #: ../browser/token_manage.py:123
@@ -81,12 +85,12 @@ msgstr ""
 msgid "heading_tokenrolelisting"
 msgstr ""
 
-#. Default: "Roles to assing"
+#. Default: "Roles to be assigned to this token's receiver"
 #: ../interfaces.py:47
 msgid "help_roles"
 msgstr ""
 
-#. Default: "End date to assign to token"
+#. Default: "From this date this token will be useless"
 #: ../interfaces.py:43
 msgid "help_token_validity"
 msgstr ""
@@ -96,7 +100,7 @@ msgstr ""
 msgid "help_token_value"
 msgstr ""
 
-#. Default: "Please enter here the list of emails."
+#. Default: "Please enter here the list of emails. One per line"
 #: ../browser/interfaces.py:42
 msgid "help_tokenrole_email_list"
 msgstr ""
@@ -106,7 +110,7 @@ msgstr ""
 msgid "help_tokenrole_subject"
 msgstr ""
 
-#. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens."
+#. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens or the email won't be complete."
 #: ../browser/interfaces.py:37
 msgid "help_tokenrole_text"
 msgstr ""
@@ -151,7 +155,7 @@ msgstr ""
 msgid "label_send_token"
 msgstr ""
 
-#. Default: "Token Validity End"
+#. Default: "Token expiration date"
 #: ../interfaces.py:42
 msgid "label_token_validity"
 msgstr ""
@@ -186,7 +190,7 @@ msgstr ""
 msgid "modify_token"
 msgstr ""
 
-#. Default: "New token"
+#. Default: "Add token"
 #: ../browser/token_manage.pt:17
 msgid "new_token"
 msgstr ""

@@ -21,6 +21,7 @@ from z3c.form import button
 from z3c.form.interfaces import IAddForm
 
 from redomino.tokenrole.interfaces import ITokenRolesProviding
+from redomino.tokenrole import tokenroleMessageFactory as _
 
 
 class CancelActions(button.ButtonActions):
@@ -32,7 +33,7 @@ class CancelActions(button.ButtonActions):
     def update(self):
         self.form.buttons = button.Buttons(
             self.form.buttons,
-            button.Button('cancel', u'Cancel'))
+            button.Button('cancel', _(u'Cancel')))
         super(CancelActions, self).update()
 
 

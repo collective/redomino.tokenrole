@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-12 10:46+0000\n"
+"POT-Creation-Date: 2012-06-14 10:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Davide Moro <davide.moro@redomino.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Language-Name: Italiano\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: redomino.tokenrole\n"
+
+#: ../browser/actions.py:36
+msgid "Cancel"
+msgstr "Annulla"
 
 #. Default: "Add token"
 #: ../browser/token_manage.py:123
@@ -78,12 +82,12 @@ msgstr "Gestisci link di condivisione"
 msgid "heading_tokenrolelisting"
 msgstr "Elenco dei token"
 
-#. Default: "Roles to assing"
+#. Default: "Roles to be assigned to this token's receiver"
 #: ../interfaces.py:47
 msgid "help_roles"
 msgstr "Puoi scegliere i poteri da assegnare a chi accederà su quest'area con questo link di condivisione"
 
-#. Default: "End date to assign to token"
+#. Default: "From this date this token will be useless"
 #: ../interfaces.py:43
 msgid "help_token_validity"
 msgstr "Data di scadenza del link di condivisione"
@@ -93,7 +97,7 @@ msgstr "Data di scadenza del link di condivisione"
 msgid "help_token_value"
 msgstr "Valore del token di accesso"
 
-#. Default: "Please enter here the list of emails."
+#. Default: "Please enter here the list of emails. One per line"
 #: ../browser/interfaces.py:42
 msgid "help_tokenrole_email_list"
 msgstr "Inserisci su righe separate uno o più indirizzi email a cui vuoi inviare il link di condivisione"
@@ -103,7 +107,7 @@ msgstr "Inserisci su righe separate uno o più indirizzi email a cui vuoi inviar
 msgid "help_tokenrole_subject"
 msgstr "Inserici il soggetto della mail che vuoi inviare"
 
-#. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens."
+#. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens or the email won't be complete."
 #: ../browser/interfaces.py:37
 msgid "help_tokenrole_text"
 msgstr "Digita qui il testo del messaggio che vuoi inviare: al fondo verranno accodati automaticamente il link di condivisione con il token di accesso e la data di scadenza del link. Attenzione a non rimuovere completamente i token ${date}s e ${url}s o il messaggio non sarà completo."
@@ -148,7 +152,7 @@ msgstr "Distribuisci link di condivisione"
 msgid "label_send_token"
 msgstr "Invia link di condivisione"
 
-#. Default: "Token Validity End"
+#. Default: "Token expiration date"
 #: ../interfaces.py:42
 msgid "label_token_validity"
 msgstr "Validità del link di condivisione"
@@ -183,7 +187,7 @@ msgstr "Token id"
 msgid "modify_token"
 msgstr "Modifica token"
 
-#. Default: "New token"
+#. Default: "Add token"
 #: ../browser/token_manage.pt:17
 msgid "new_token"
 msgstr "Aggiungi un nuovo link di accesso"

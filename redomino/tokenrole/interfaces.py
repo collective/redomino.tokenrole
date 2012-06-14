@@ -39,12 +39,12 @@ class ITokenInfoSchema(Interface):
                     required=True)
     
     token_end = Datetime(
-                    title=_(u'label_token_validity', default=u'Token Validity End'),
-                    description=_(u'help_token_validity', default=u'End date to assign to token'),
+                    title=_(u'label_token_validity', default=u'Token expiration date'),
+                    description=_(u'help_token_validity', default=u"From this date this token will be useless"),
                     required=True)
 
     token_roles= List(title=_(u'label_roles', default=u'Roles'),
-                      description=_(u'help_roles', default=u'Roles to assing'),
+                      description=_(u'help_roles', default=u"Roles to be assigned to this token's receiver"),
                       required=True,
                       default=['Reader'],
                       value_type=Choice(vocabulary='redomino.tokenrole.Roles',)

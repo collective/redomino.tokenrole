@@ -14,7 +14,7 @@
     <h1 class="documentFirstHeading"
         i18n:translate="heading_tokenrole_manage">Token Role management</h1>
 
-    <strong><a href="" tal:attributes="href string:$here_url/@@token_add" i18n:translate="new_token">New token</a>
+    <strong><a href="" tal:attributes="href string:$here_url/@@token_add" i18n:translate="new_token">Add token</a>
     </strong>    
     (
     <a href="#" tal:repeat="delta python:view.get_time_deltas()"
