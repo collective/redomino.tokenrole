@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-06-14 10:12+0000\n"
+"POT-Creation-Date: 2012-07-09 15:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,12 @@ msgstr ""
 
 #: ../browser/actions.py:36
 msgid "Cancel"
+msgstr ""
+
+#: ../browser/interfaces.py:38
+msgid "Please replace this text with your own message, but do not change under the next line.
+Date: ${date}s
+Url: ${url}s"
 msgstr ""
 
 #. Default: "Add token"
@@ -175,7 +181,7 @@ msgstr ""
 msgid "label_tokenrole_subject"
 msgstr ""
 
-#. Default: "Text"
+#. Default: "Email body message"
 #: ../browser/interfaces.py:36
 msgid "label_tokenrole_text"
 msgstr ""

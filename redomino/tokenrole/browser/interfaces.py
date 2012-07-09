@@ -33,9 +33,9 @@ class ITokenSendForm(Interface):
                               description = _(u'help_tokenrole_subject', default=u'Please enter the subject of the message you want to send.'),
                               required = True,
                              )
-    text = schema.Text(title = _(u'label_tokenrole_text', default=u'Text'),
+    text = schema.Text(title = _(u'label_tokenrole_text', default=u'Email body message'),
                        description = _(u'help_tokenrole_text', default=u"Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens or the email won't be complete."),
-                       default = u'Date: ${date}s\nUrl: ${url}s',
+                       default = _(u"Please replace this text with your own message, but do not change under the next line.\n-----------------\nDate: ${date}s\nUrl: ${url}s"),
                        required = True,
                       )
     email_list = schema.List(title = _(u'label_tokenrole_email_list', default=u'List of emails'),

@@ -39,6 +39,12 @@
                        tal:attributes="href token_url" tal:content="token_url">url token</a>
                 </h3>
                 <div class="documentByLine">
+                    <span i18n:domain="linguaplone" i18n:translate="label_link_content">Content</span>
+                    <span>
+                        <a href="#" tal:attributes="href here_url">
+                            <span tal:content="python:view.context.Title()">title</span> <br />
+                        </a>
+                    </span>
                     <span i18n:translate="token_end_date">End date:</span>
                     <span tal:content="python:view.get_local_date(tokens_data[tokenid].get('token_end'))">end date</span> <br />
                     <span i18n:translate="label_role">Roles</span>:
