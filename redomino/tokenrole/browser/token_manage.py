@@ -142,6 +142,7 @@ class TokenEditForm(form.EditForm):
     label = _(u"heading_edit_token", default="TokenRole: Modify token")
     successMessage = _('data_saved', default='Data successfully updated.')
     noChangesMessage = _('no_changes', default='No changes were applied.')
+    formErrorsMessage = _('errors', default='There were some errors.')
 
 
     def updateWidgets(self):

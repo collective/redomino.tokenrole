@@ -4,6 +4,9 @@ Changelog
 0.8 (unreleased)
 ----------------
 
+- i18n fixes on message errors
+  [davidemoro]
+
 - Added a date validator, you shouldn't choose a token end date
   in the past.
   [davidemoro]
