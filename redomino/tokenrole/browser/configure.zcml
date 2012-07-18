@@ -10,6 +10,9 @@
     directory="resources"
   />
 
+  <!-- Validators -->
+  <adapter factory=".validators.SampleValidator" />
+
   <!-- Actions -->
   <adapter factory=".actions.CancelActions" />
   <adapter factory=".actions.AddActionHandler" />
