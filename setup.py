@@ -1,7 +1,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.8.dev0'
+version = '0.8'
 
 tests_require = ['plone.app.testing']
 
