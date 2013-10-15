@@ -100,7 +100,7 @@ class TokenSendForm(form.Form):
         email_charset = portal.getProperty('email_charset')
         from_address = portal.getProperty('email_from_address')
         
-        tr_annotate = ITokenRolesAnnotate(context)
+#        tr_annotate = ITokenRolesAnnotate(context)
 #        end_date = context.toLocalizedTime(tr_annotate.token_dict[token_id]['token_end'])
         util = getToolByName(self.context, 'translation_service')
         end_date = util.ulocalized_time(time.time(), long_format = None, time_only = None, context = self.context, domain='plonelocales')
