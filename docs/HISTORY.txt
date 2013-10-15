@@ -4,7 +4,8 @@ Changelog
 0.10 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Changed Readme.txt and commented unused code
+  [davidemoro]
 
 
 0.9 (2013-10-15)
