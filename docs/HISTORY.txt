@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9 (unreleased)
+0.9 (2013-10-15)
 ----------------
 
 - Fixed issue #2 (tokenrole broken for Plone>4.2.5)
