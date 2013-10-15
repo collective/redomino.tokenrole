@@ -21,13 +21,9 @@ from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
 from Products.PluggableAuthService.utils import classImplements
 from Products.PluggableAuthService.plugins.BasePlugin import BasePlugin
-from Products.PluggableAuthService.interfaces.plugins import IRolesPlugin
 # from Products.PluggableAuthService.interfaces.plugins import IGroupsPlugin
 from Products.PluggableAuthService.interfaces.plugins import IExtractionPlugin
 from Products.PluggableAuthService.interfaces.plugins import IAuthenticationPlugin
-from Products.PlonePAS.interfaces.plugins import ILocalRolesPlugin
-
-from redomino.tokenrole.interfaces import ITokenRolesProviding
 
 # try:
 #     set
@@ -103,7 +99,8 @@ class TokenRole(BasePlugin):
     security.declarePrivate('authenticateCredentials')
     def authenticateCredentials(self, credentials):
         if credentials.has_key('login'):
-            return None
+            if credentials.get('login'):
+                return None
         tokenrole = credentials.get('TokenRole', None)
         if not tokenrole:
             return None
