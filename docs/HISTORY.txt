@@ -7,6 +7,10 @@ Changelog
 - Fixed issue #2 (tokenrole broken for Plone>4.2.5)
   [davidemoro]
 
+- Fixed issue #4 (can edit permission problems).
+  Only Managers and Site Administrators will be able to manage token roles
+  [davidemoro]
+
 
 0.8 (2012-07-19)
 ----------------

@@ -15,7 +15,7 @@ action in the content actions menu.
 
 A new content tab will appear to let you manage your tokens on that
 page: create a new one leaving there what the system suggests or
-modifying it as you need. Now try to access the provided url with
+modifying it as you need (Manager or Site Administrator role is required). Now try to access the provided url with
 an unpriviledged user and you'll get the role you granted on that context.
 
 You can manage the token role (edit, delete, modify or distribute via mail).
