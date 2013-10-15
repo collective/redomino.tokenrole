@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.10 (unreleased)
+0.10 (2013-10-15)
 -----------------
 
 - Changed Readme.txt and commented unused code
