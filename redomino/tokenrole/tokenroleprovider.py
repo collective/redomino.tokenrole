@@ -103,7 +103,7 @@ class TokenRolesLocalRolesProviderAdapter(object):
 
         token = request.get('token', None)
         if not token:
-            request.cookies.get('token', None)
+            token = request.cookies.get('token', None)
 
         tr_annotate = ITokenRolesAnnotate(self.context, None)
         if tr_annotate and tr_annotate.token_dict.has_key(token):
