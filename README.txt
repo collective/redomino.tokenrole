@@ -47,7 +47,7 @@ product and its PAS plugin, and of course many thanks to borg.localrole
 for the incredibly easy way of providing localroles on context.
 
 Thanks to Fabrizio Reale, Redomino and ITCILO for inspiring and sponsoring this
-effort.
+effort. Current mantainer Davide Moro.
   
 First implemented by Maurizio Delmonte.
 
