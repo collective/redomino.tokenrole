@@ -4,7 +4,8 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fixed issue #1 (tokenrole broken for Plone>4.2.5)
+  [davidemoro]
 
 
 0.8 (2012-07-19)
