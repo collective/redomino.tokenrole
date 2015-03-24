@@ -82,6 +82,19 @@ class TokenManageView(BrowserView):
         return deltas
 
 
+class TokenUtilsView(BrowserView):
+
+    def token_add(self, days=30, roles=('Reader',)):
+        tr_annotate = ITokenRolesAnnotate(self.context)
+        token_id = make_uuid(self.context.getId())
+        now = datetime.datetime.now()
+        token_end = now + datetime.timedelta(days=days)
+        token_roles = roles
+        tr_annotate.token_dict[token_id] = {
+            'token_end': token_end,
+            'token_roles': token_roles
+        }
+        return token_id
 
 
 class TokenAddForm(form.AddForm):

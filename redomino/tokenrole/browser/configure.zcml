@@ -53,5 +53,12 @@
     class=".token_manage.TokenManageView"
     template="token_manage.pt"
     permission="tokenrole.ManageToken" />
+
+  <browser:page
+    name="token_utils"
+    for="..interfaces.ITokenRolesProviding"
+    class=".token_manage.TokenUtilsView"
+    permission="tokenrole.ManageToken"
+    allowed_attributes="token_add" />
   
 </configure>
