@@ -21,7 +21,7 @@
     <include package=".browser" />
 
     <!-- Token role providing items -->
-    <class class="Products.ATContentTypes.content.base.ATCTContent">
+    <class class="Products.ATContentTypes.content.base.ATCTMixin">
         <implements interface=".interfaces.ITokenRolesProviding" />
     </class>
     
