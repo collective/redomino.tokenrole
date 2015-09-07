@@ -15,6 +15,8 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
+import urllib
+
 from datetime import datetime
 from persistent.dict import PersistentDict
 
@@ -112,10 +114,11 @@ class TokenRolesLocalRolesProviderAdapter(object):
                 if not request.cookies.has_key('token'):
                     physical_path = self.context.getPhysicalPath()
                     # Is there a better method for calculate the url_path?
-                    url_path = '/' + '/'.join(request.physicalPathToVirtualPath(physical_path))
-                    response.setCookie(name='token', 
-                                       value=token, 
-                                       expires=dt2DT(expire_date).toZone('GMT').rfc822(), 
+                    url_path = urllib.quote('/' + '/'.join(request.physicalPathToVirtualPath(physical_path)))
+
+                    response.setCookie(name='token',
+                                       value=token,
+                                       expires=dt2DT(expire_date).toZone('GMT').rfc822(),
                                        path=url_path)
                 return roles_to_assign
         return ()
