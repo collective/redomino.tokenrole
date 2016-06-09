@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (c) 2011 Redomino srl (http://redomino.com)
 #
 # This program is free software; you can redistribute it and/or modify
@@ -16,9 +17,6 @@
 
 from Products.validation import validation
 
-def isEmail(value):
-    if validation.validatorFor('isEmail')(value) == 1:
-         return True
-    else:
-         return False
 
+def isEmail(value):
+    return(validation.validatorFor('isEmail')(value) == 1)

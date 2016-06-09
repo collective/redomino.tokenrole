@@ -1,3 +1,4 @@
-include *.txt
-recursive-include docs *
-recursive-include redomino *
+graft redomino
+graft docs
+include *.rst
+global-exclude *.pyc
