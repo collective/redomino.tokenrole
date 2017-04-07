@@ -41,7 +41,7 @@ class TokenURL(object):
     def __init__(self, context):
         self.context = context
 
-    def __call_(self, token_id):
+    def __call__(self, token_id):
         return '{}?token={}'.format(self.context.absolute_url(), token_id)
 
 
