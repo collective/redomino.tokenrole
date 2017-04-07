@@ -1,44 +1,56 @@
-import os
-from setuptools import setup, find_packages
+# -*- coding: utf-8 -*-
+"""Installer for the redomino.tokenrole package."""
 
-version = '0.11.dev0'
+from setuptools import find_packages
+from setuptools import setup
 
-tests_require = ['plone.app.testing']
 
-setup(name='redomino.tokenrole',
-      version=version,
-      description="This product allows you to share roles about a specific Plone content to an unregistered user through a link.",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from
-      # http://pypi.python.org/pypi?:action=list_classifiers
-      classifiers=[
+long_description = '\n\n'.join([
+    open('README.rst').read(),
+    open('CONTRIBUTORS.rst').read(),
+    open('CHANGES.rst').read(),
+])
+
+
+setup(
+    name='redomino.tokenrole',
+    version='1.0a1',
+    description="This product allows you to share roles about a specific Plone content to an unregistered user through a link.",
+    long_description=long_description,
+    # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        "Environment :: Web Environment",
         "Framework :: Plone",
-        "Framework :: Zope2",
-        "Framework :: Zope3",
+        "Framework :: Plone :: 5.0",
         "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Programming Language :: Python :: 2.7",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    ],
+    keywords='Python Plone',
+    author='Redomino S.r.l.',
+    author_email='info@redomino.com',
+    url='https://pypi.python.org/pypi/redomino.tokenrole',
+    license='GPL',
+    packages=find_packages(exclude=['ez_setup']),
+    namespace_packages=['redomino'],
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'plone.api',
+        'Products.GenericSetup>=1.8.2',
+        'setuptools',
+        'z3c.jbot',
+    ],
+    extras_require={
+        'test': [
+            'plone.app.testing',
+            'plone.app.contenttypes',
+            'plone.app.robotframework[debug]',
         ],
-      keywords='plone app pas redomino',
-      author='Redomino S.r.l.',
-      author_email='info@redomino.com',
-      url='https://github.com/redomino/redomino.tokenrole',
-      license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['redomino'],
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'setuptools',
-          'plone.app.z3cform',
-          # -*- Extra requirements: -*-
-      ],
-      extras_require=dict(test=tests_require),
-      entry_points="""
-      # -*- Entry points: -*-
-
-      [z3c.autoinclude.plugin]
-      target = plone
-
-      """,
-      )
+    },
+    entry_points="""
+    [z3c.autoinclude.plugin]
+    target = plone
+    """,
+)

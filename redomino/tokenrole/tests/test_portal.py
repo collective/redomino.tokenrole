@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (c) 2010 Redomino srl (http://redomino.com)
 #
 # This program is free software; you can redistribute it and/or modify
@@ -14,28 +15,44 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
-import unittest2 as unittest
+import unittest
 from redomino.tokenrole.testing import REDOMINO_TOKENROLE_INTEGRATION_TESTING
+from redomino.tokenrole.interfaces import ITokenURL
+from redomino.tokenrole.validators import isEmail
+
 
 class TestPortal(unittest.TestCase):
     """ Maps settings """
     layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
 
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+
     def test_installed(self):
-        portal = self.layer['portal']
-        self.assertTrue(portal.portal_quickinstaller.isProductInstalled('redomino.tokenrole'))
+        qi = self.portal.portal_quickinstaller
+        self.assertTrue(qi.isProductInstalled('redomino.tokenrole'))
 
     def test_acl_users(self):
         """ plugin in acl_users? """
         from redomino.tokenrole.config import PLUGINID
-        portal = self.layer['portal']
-        acl_users = portal.acl_users
+        acl_users = self.portal.acl_users
         self.assertTrue(PLUGINID in acl_users.objectIds())
 
     def test_portal_actions(self):
         """ Portal actions loaded? """
-        portal = self.layer['portal']
-        portal_actions = portal.portal_actions
-        self.assertTrue('manage_tokenrole' in portal_actions.object.objectIds())
+        self.assertIn('manage_tokenrole', self.portal.portal_actions.object)
 
+    def test_validator_valid_email(self):
+        self.assertTrue(isEmail('info@example.org'))
 
+    def test_validator_valid_email(self):
+        self.assertFalse(isEmail('info'))
+
+    def test_tokenurl_adapter(self):
+        self.assertEqual(
+            ITokenURL(self.portal)('secret-id'),
+            self.portal.absolute_url() + '?token=secret-id'
+        )
+
+# EOF

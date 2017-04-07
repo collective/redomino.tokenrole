@@ -1,6 +1,9 @@
 redomino.tokenrole
 ==================
 
+.. image:: https://secure.travis-ci.org/collective/redomino.tokenrole.png?branch=master
+    :target: http://travis-ci.org/collective/redomino.tokenrole
+
 This product allows you to share roles about a specific Plone content to an 
 unregistered user through a link.
 
