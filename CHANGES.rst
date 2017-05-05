@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b2 (unreleased)
+1.0b2 (2017-05-05)
 ------------------
 
 - Fix packaging issue
