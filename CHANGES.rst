@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a1 (unreleased)
+1.0b1 (2017-05-05)
 ------------------
 
 - Plone 5 compatibility
