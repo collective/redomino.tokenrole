@@ -1,4 +1,4 @@
 graft redomino
 graft docs
-include *.rst
+include *.rst *.py .coveragerc buildout.cfg .editorconfig
 global-exclude *.pyc
