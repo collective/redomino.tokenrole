@@ -15,14 +15,18 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
-from datetime import datetime
-from persistent.dict import PersistentDict
-
-from zope.interface import implements
-from zope.component import adapts
-from zope.annotation.interfaces import IAnnotations
-
 from borg.localrole.interfaces import ILocalRoleProvider
+from datetime import datetime
+from DateTime import DateTime
+from persistent.dict import PersistentDict
+from redomino.tokenrole.interfaces import ITokenRolesAnnotate
+from redomino.tokenrole.interfaces import ITokenInfoSchema
+from redomino.tokenrole.interfaces import ITokenRolesProviding
+from zope.annotation.interfaces import IAnnotations
+from zope.component import adapter
+from zope.globalrequest import getRequest
+from zope.interface import implementer
+
 try:
     from plone.protect.utils import safeWrite
 except ImportError:
@@ -30,19 +34,11 @@ except ImportError:
         return
 
 
-from Products.ATContentTypes.utils import dt2DT
-
-from redomino.tokenrole.interfaces import ITokenRolesAnnotate
-from redomino.tokenrole.interfaces import ITokenInfoSchema
-from redomino.tokenrole.interfaces import ITokenRolesProviding
-
 ANNOTATIONS_KEY = 'redomino.tokenrole.tokenrole_annotations'
 
 
-
-
+@implementer(ITokenRolesAnnotate)
 class TokenRolesAnnotateAdapter(object):
-    implements(ITokenRolesAnnotate)
 
     def __init__(self, context):
         self.annotations = IAnnotations(context).setdefault(ANNOTATIONS_KEY,
@@ -58,9 +54,9 @@ class TokenRolesAnnotateAdapter(object):
         return property(get, set)
 
 
+@implementer(ITokenInfoSchema)
+@adapter(ITokenRolesProviding)
 class TokenInfoSchema(object):
-    implements(ITokenInfoSchema)
-    adapts(ITokenRolesProviding)
 
     def __init__(self, context):
         self.context = context
@@ -100,15 +96,15 @@ class TokenInfoSchema(object):
         return property(getter, setter)
 
 
+@implementer(ILocalRoleProvider)
 class TokenRolesLocalRolesProviderAdapter(object):
-    implements(ILocalRoleProvider)
 
     def __init__(self, context):
         self.context = context
 
     def getRoles(self, principal_id):
         """Returns the roles for the given principal in context"""
-        request = self.context.REQUEST
+        request = getRequest()
         response = request.RESPONSE
 
         token = request.get('token', None)
@@ -127,7 +123,7 @@ class TokenRolesLocalRolesProviderAdapter(object):
                     url_path = '/' + '/'.join(request.physicalPathToVirtualPath(physical_path))
                     response.setCookie(name='token',
                                        value=token,
-                                       expires=dt2DT(expire_date).toZone('GMT').rfc822(),
+                                       expires=DateTime(expire_date).toZone('GMT').rfc822(),
                                        path=url_path)
                 return roles_to_assign
         return ()
