@@ -5,7 +5,8 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Make ATContentTypes optional
+  [tomgross]
 
 
 1.0rc1 (2017-08-02)
