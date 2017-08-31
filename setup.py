@@ -40,6 +40,7 @@ setup(
     install_requires=[
         'plone.api',
         'Products.GenericSetup>=1.8.2',
+        'Products.validation',
         'setuptools',
         'z3c.jbot',
     ],
