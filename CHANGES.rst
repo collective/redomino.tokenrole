@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0rc2 (unreleased)
+1.0rc2 (2017-09-06)
 -------------------
 
 - Make ATContentTypes optional
