@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='redomino.tokenrole',
-    version='1.0rc2',
+    version='1.0rc3.dev0',
     description="This product allows you to share roles about a specific Plone content to an unregistered user through a link.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
