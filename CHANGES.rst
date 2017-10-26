@@ -5,7 +5,8 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix error when sending token url via email
+  [tomgross]
 
 
 1.0rc2 (2017-09-06)
