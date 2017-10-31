@@ -13,6 +13,9 @@ sdist
 develop-eggs
 .installed.cfg
 .swp
+include
+p*.json
+lib*
 
 # Installer logs
 pip-log.txt

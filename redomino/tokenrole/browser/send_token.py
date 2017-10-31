@@ -64,6 +64,8 @@ class TokenSendForm(form.Form):
     def updateWidgets(self):
         super(TokenSendForm, self).updateWidgets()
         self.widgets['token_display'].value = self.request.get('form.widgets.token_id')
+        # for some reasons this is not taken from the request otherwise
+        self.widgets['token_id'].value = self.request.get('form.widgets.token_id')
 
     # Handler for the submit action
     @button.buttonAndHandler(_(u'label_send_token', default=u'Send'), name='send')

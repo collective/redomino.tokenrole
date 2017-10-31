@@ -15,10 +15,15 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
-import unittest
+from plone import api
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from redomino.tokenrole.testing import REDOMINO_TOKENROLE_INTEGRATION_TESTING
 from redomino.tokenrole.interfaces import ITokenURL
 from redomino.tokenrole.validators import isEmail
+from redomino.tokenrole.browser.send_token import TokenSendForm
+
+import unittest
 
 
 class TestPortal(unittest.TestCase):
@@ -54,5 +59,23 @@ class TestPortal(unittest.TestCase):
             ITokenURL(self.portal)('secret-id'),
             self.portal.absolute_url() + '?token=secret-id'
         )
+
+
+class TestSendTokenForm(unittest.TestCase):
+    """ Maps settings """
+    layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.request = self.layer['request']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+        self.doc = api.content.create(self.portal, 'Document', id='test-doc')
+
+    def test_widgets(self):
+        self.request.form['form.widgets.token_id'] = 'secret-hash'
+        form = TokenSendForm(self.doc, self.request)
+        form.update()
+        self.assertEqual(form.widgets['token_id'].value, 'secret-hash')
+        self.assertEqual(form.widgets['token_display'].value, 'secret-hash')
 
 # EOF
