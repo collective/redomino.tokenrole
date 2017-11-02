@@ -15,6 +15,8 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 #: ./browser/actions.py:36
+#: ./browser/send_token.py:83
+#: ./browser/token_manage.py:169
 msgid "Cancel"
 msgstr ""
 
@@ -52,6 +54,7 @@ msgid "delete_token"
 msgstr ""
 
 #. Default: "There were some errors."
+#: ./browser/send_token.py:75
 #: ./browser/token_manage.py:93
 msgid "errors"
 msgstr ""
@@ -118,12 +121,6 @@ msgstr ""
 
 #: ./browser/token_manage.py:66
 msgid "hours"
-msgstr ""
-
-#. Default: "Cancel"
-#: ./browser/send_token.py:83
-#: ./browser/token_manage.py:169
-msgid "label_cancel"
 msgstr ""
 
 #. Default: "Email"
@@ -204,11 +201,6 @@ msgstr ""
 #. Default: "End date:"
 #: ./browser/token_manage.pt:48
 msgid "token_end_date"
-msgstr ""
-
-#. Default: "An error has occurred"
-#: ./browser/send_token.py:75
-msgid "token_role_send_ko"
 msgstr ""
 
 #. Default: "Error sending email."

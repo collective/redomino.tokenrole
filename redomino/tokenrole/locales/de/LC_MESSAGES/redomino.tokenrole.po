@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2017-11-02 14:59+0100\n"
+"PO-Revision-Date: 2017-11-02 15:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Language: de\n"
 "X-Generator: Poedit 2.0.3\n"
 
-#: browser/actions.py:36
+#: browser/actions.py:36 browser/send_token.py:83 browser/token_manage.py:169
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -53,7 +53,7 @@ msgid "delete_token"
 msgstr "Token löschen"
 
 #. Default: "There were some errors."
-#: browser/token_manage.py:93
+#: browser/send_token.py:75 browser/token_manage.py:93
 msgid "errors"
 msgstr "Es ist ein Fehler aufgetreten."
 
@@ -110,127 +110,117 @@ msgstr "Betreff der E-Mail mit der der Token verschickt wird."
 #. Default: "Please enter here the message you want to send. Please, do not remove ${date} and ${url} tokens or the email won't be complete."
 #: browser/interfaces.py:42
 msgid "help_tokenrole_text"
-msgstr ""
+msgstr "Text der E-Mail, die für den Versand der Token URL verwendet werden soll. Bitte die Bestandteile ${date} und ${url} nicht entfernen."
 
 #. Default: "This token is going to be distributed."
 #: browser/interfaces.py:31
 msgid "help_tokenrole_token_id"
-msgstr ""
+msgstr "Wert des Tokens"
 
 #: browser/token_manage.py:66
 msgid "hours"
-msgstr ""
-
-#. Default: "Cancel"
-#: browser/send_token.py:83 browser/token_manage.py:169
-msgid "label_cancel"
-msgstr ""
+msgstr "Stunden"
 
 #. Default: "Email"
 #: browser/interfaces.py:52
 msgid "label_email"
-msgstr ""
+msgstr "E-Mail"
 
 #. Default: "Roles"
 #: browser/token_manage.pt:50
 msgid "label_role"
-msgstr ""
+msgstr "Rolle"
 
 #. Default: "Roles"
 #: interfaces.py:58
 msgid "label_roles"
-msgstr ""
+msgstr "Rollen"
 
 #. Default: "Send token form"
 #: browser/send_token.py:53
 msgid "label_send_form"
-msgstr ""
+msgstr "Token Formular schicken"
 
 #. Default: "Send"
 #: browser/send_token.py:71
 msgid "label_send_token"
-msgstr ""
+msgstr "Absenden"
 
 #. Default: "Token expiration date"
 #: interfaces.py:50
 msgid "label_token_validity"
-msgstr ""
+msgstr "Ablaufdatum des Tokens"
 
 #. Default: "Token Value"
 #: interfaces.py:44
 msgid "label_token_value"
-msgstr ""
+msgstr "Wert des Tokens"
 
 #. Default: "List of emails"
 #: browser/interfaces.py:46
 msgid "label_tokenrole_email_list"
-msgstr ""
+msgstr "Liste der E-Mail Adressen"
 
 #. Default: "Subject"
 #: browser/interfaces.py:35
 msgid "label_tokenrole_subject"
-msgstr ""
+msgstr "Betreff"
 
 #. Default: "Email body message"
 #: browser/interfaces.py:41
 msgid "label_tokenrole_text"
-msgstr ""
+msgstr "Text der E-Mail"
 
 #. Default: "Token id"
 #: browser/interfaces.py:29
 msgid "label_tokenrole_token_id"
-msgstr ""
+msgstr "Wert des Tokens"
 
 #. Default: "Modify token"
 #: browser/token_manage.py:151
 msgid "modify_token"
-msgstr ""
+msgstr "Token ändern"
 
 #. Default: "Add token"
 #: browser/token_manage.pt:17
 msgid "new_token"
-msgstr ""
+msgstr "Neuer Token"
 
 #. Default: "No changes were applied."
 #: browser/send_token.py:55 browser/token_manage.py:94
 msgid "no_changes"
-msgstr ""
+msgstr "Keine Änderungen vorgnommen."
 
 #: configure.zcml:39
 msgid "redomino.tokenrole"
-msgstr ""
+msgstr "redomino.tokenrole"
 
 #. Default: "End date:"
 #: browser/token_manage.pt:48
 msgid "token_end_date"
-msgstr ""
-
-#. Default: "An error has occurred"
-#: browser/send_token.py:75
-msgid "token_role_send_ko"
-msgstr ""
+msgstr "Ablaufdatum:"
 
 #. Default: "Error sending email."
 #: browser/send_token.py:110
 msgid "token_role_send_ko_mail"
-msgstr ""
+msgstr "Fehler beim E-Mail Versand."
 
 #. Default: "Token email sent."
 #: browser/send_token.py:108
 msgid "token_role_send_ok_mail"
-msgstr ""
+msgstr "Token E-Mails erfolgreich versandt."
 
 #. Default: "Delete"
 #: browser/token_manage.pt:58
 msgid "tokenrole_delete_token"
-msgstr ""
+msgstr "Löschen"
 
 #. Default: "Modify"
 #: browser/token_manage.pt:53
 msgid "tokenrole_modify_token"
-msgstr ""
+msgstr "Ändern"
 
 #. Default: "Distribute Token"
 #: browser/token_manage.pt:63
 msgid "tokenrole_send_token"
-msgstr ""
+msgstr "Token versenden"

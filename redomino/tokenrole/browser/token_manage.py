@@ -166,7 +166,7 @@ class TokenEditForm(form.EditForm):
             self.request.response.redirect(nextURL)
 
     @button.buttonAndHandler(
-        _(u'label_cancel', default=u'Cancel'), name='cancel')
+        _(u'Cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
@@ -222,7 +222,7 @@ class TokenDeleteForm(form.Form):
         self.request.response.redirect(self.nextURL())
         api.portal.show_message(self.status)
 
-    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    @button.buttonAndHandler(_(u'Cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())

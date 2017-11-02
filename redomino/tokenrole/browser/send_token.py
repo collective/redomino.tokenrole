@@ -72,7 +72,7 @@ class TokenSendForm(form.Form):
     def handle_submit(self, action):
         data, errors = self.extractData()
         if errors:
-            self.status = _('token_role_send_ko', default=u'An error has occurred')
+            self.status = _('errors')
             return
 
         # do something usefull, here we send the mail and
@@ -80,7 +80,7 @@ class TokenSendForm(form.Form):
         self.status = self.send_mail(data)
         self.request.response.redirect(self.nextURL())
 
-    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    @button.buttonAndHandler(_(u'Cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())

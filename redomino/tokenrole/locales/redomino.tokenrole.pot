@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-11-02 13:49+0000\n"
+"POT-Creation-Date: 2017-11-02 14:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,8 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #: ./browser/actions.py:36
+#: ./browser/send_token.py:83
+#: ./browser/token_manage.py:169
 msgid "Cancel"
 msgstr ""
 
@@ -61,6 +63,7 @@ msgstr ""
 msgid "delete_token"
 msgstr ""
 
+#: ./browser/send_token.py:75
 #: ./browser/token_manage.py:93
 msgid "errors"
 msgstr ""
@@ -127,12 +130,6 @@ msgstr ""
 
 #: ./browser/token_manage.py:66
 msgid "hours"
-msgstr ""
-
-#. Default: "Cancel"
-#: ./browser/send_token.py:83
-#: ./browser/token_manage.py:169
-msgid "label_cancel"
 msgstr ""
 
 #. Default: "Email"
@@ -213,11 +210,6 @@ msgstr ""
 #. Default: "End date:"
 #: ./browser/token_manage.pt:48
 msgid "token_end_date"
-msgstr ""
-
-#. Default: "An error has occurred"
-#: ./browser/send_token.py:75
-msgid "token_role_send_ko"
 msgstr ""
 
 #. Default: "Error sending email."

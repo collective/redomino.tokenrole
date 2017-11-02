@@ -15,6 +15,8 @@ msgstr ""
 "Domain: redomino.tokenrole\n"
 
 #: ./browser/actions.py:36
+#: ./browser/send_token.py:83
+#: ./browser/token_manage.py:169
 msgid "Cancel"
 msgstr "Annulla"
 
@@ -52,6 +54,7 @@ msgid "delete_token"
 msgstr "Elimina link di condivisione"
 
 #. Default: "There were some errors."
+#: ./browser/send_token.py:75
 #: ./browser/token_manage.py:93
 msgid "errors"
 msgstr "Si è verificato un errore"
@@ -119,12 +122,6 @@ msgstr "Per la tua sicurezza non comunicare a persone non fidate questo token di
 #: ./browser/token_manage.py:66
 msgid "hours"
 msgstr "ore"
-
-#. Default: "Cancel"
-#: ./browser/send_token.py:83
-#: ./browser/token_manage.py:169
-msgid "label_cancel"
-msgstr "Annulla"
 
 #. Default: "Email"
 #: ./browser/interfaces.py:52
@@ -205,11 +202,6 @@ msgstr ""
 #: ./browser/token_manage.pt:48
 msgid "token_end_date"
 msgstr "Data di scadenza:"
-
-#. Default: "An error has occurred"
-#: ./browser/send_token.py:75
-msgid "token_role_send_ko"
-msgstr "Si è verificato un errore durante l'invio"
 
 #. Default: "Error sending email."
 #: ./browser/send_token.py:110
