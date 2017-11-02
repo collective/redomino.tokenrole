@@ -35,7 +35,6 @@ from plone.uuid.interfaces import IUUIDGenerator
 from zope.component import getUtility
 
 from Products.Five import BrowserView
-from Products.statusmessages.interfaces import IStatusMessage
 
 from redomino.tokenrole import tokenroleMessageFactory as _
 from redomino.tokenrole.interfaces import ITokenRolesAnnotate
@@ -91,7 +90,7 @@ class TokenAddForm(form.AddForm):
 
     label = _(u"heading_add_token", default="TokenRole: Add token")
     successMessage = _('data_saved', default='Data successfully updated.')
-    formErrorsMessage = _('form_errors', default='There were some errors.')
+    formErrorsMessage = _('errors')
     noChangesMessage = _('no_changes', default='No changes were applied.')
 
     def updateWidgets(self):
@@ -111,7 +110,7 @@ class TokenAddForm(form.AddForm):
         return context
 
     def nextURL(self):
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        api.portal.show_message(self.status)
         return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
 
     def update(self):
@@ -146,11 +145,10 @@ class TokenEditForm(form.EditForm):
         self.widgets['token_display'].value = self.request.get('form.widgets.token_id')
 
     def nextURL(self):
-        context = self.getContent()
-        data, errors = self.extractData()
-        return "%s/@@token_manage" % (context.absolute_url())
+        return "%s/@@token_manage" % (self.context.absolute_url())
 
-    @button.buttonAndHandler(_(u'modify_token', default=u"Modify token"), name='apply')
+    @button.buttonAndHandler(
+        _(u'modify_token', default=u"Modify token"), name='apply')
     def handleApply(self, action):
         data, errors = self.extractData()
         if errors:
@@ -164,16 +162,15 @@ class TokenEditForm(form.EditForm):
 
         nextURL = self.nextURL()
         if nextURL:
-            IStatusMessage(self.request).addStatusMessage(self.status, type='info')
-            self.request.response.redirect(self.nextURL())
-        return ''
+            api.portal.show_message(self.status)
+            self.request.response.redirect(nextURL)
 
-    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    @button.buttonAndHandler(
+        _(u'label_cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
-        return
+        api.portal.show_message(self.status)
 
 # wrap the form with plone.app.z3cform's Form wrapper
 TokenEditFormView = layout.wrap_form(TokenEditForm)
@@ -200,6 +197,8 @@ class TokenDeleteForm(form.Form):
     def updateWidgets(self):
         super(TokenDeleteForm, self).updateWidgets()
         self.widgets['token_display'].value = self.request.get('form.widgets.token_id')
+        # for some reasons this is not taken from the request otherwise
+        self.widgets['token_id'].value = self.request.get('form.widgets.token_id')
 
     def nextURL(self):
         context = self.getContent()
@@ -211,7 +210,7 @@ class TokenDeleteForm(form.Form):
     def handle_submit(self, action):
         data, errors = self.extractData()
         if errors:
-            self.status = _(u"delete_error", default="An error has occurred")
+            self.status = _(u'errors')
             return
 
         context = self.getContent()
@@ -221,12 +220,13 @@ class TokenDeleteForm(form.Form):
 
         self.status = _(u'delete_success', default=u"Token removed")
         self.request.response.redirect(self.nextURL())
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        api.portal.show_message(self.status)
 
     @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
+        api.portal.show_message(self.status)
+
 
 TokenDeleteFormView = layout.wrap_form(TokenDeleteForm)

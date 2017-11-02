@@ -84,11 +84,10 @@ class TokenSendForm(form.Form):
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        return
 
     def nextURL(self):
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
-        return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
+        api.portal.show_message(self.status)
+        return "%s/%s" % (self.context.absolute_url(), '@@token_manage')
 
     def send_mail(self, data):
         email_list = data['email_list']
@@ -106,8 +105,9 @@ class TokenSendForm(form.Form):
             for recipient in email_list:
                 api.portal.send_email(
                     recipient=recipient, subject=subject, body=message)
+            return _('token_role_send_ok_mail', default=u'Token email sent.')
         except ValueError:
-            return _('token_role_send_ko_mail', default=u'Error sending email')
+            return _('token_role_send_ko_mail', default=u'Error sending email.')
 
 # wrap the form with plone.app.z3cform's Form wrapper
 TokenSendFormView = layout.wrap_form(TokenSendForm)
