@@ -86,7 +86,7 @@ class TokenSendForm(form.Form):
         self.request.response.redirect(self.nextURL())
 
     def nextURL(self):
-        api.portal.show_message(self.status)
+        api.portal.show_message(self.status, request=self.request)
         return "%s/%s" % (self.context.absolute_url(), '@@token_manage')
 
     def send_mail(self, data):

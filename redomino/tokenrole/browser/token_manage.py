@@ -110,7 +110,7 @@ class TokenAddForm(form.AddForm):
         return context
 
     def nextURL(self):
-        api.portal.show_message(self.status)
+        api.portal.show_message(self.status, request=self.request)
         return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
 
     def update(self):
@@ -162,7 +162,7 @@ class TokenEditForm(form.EditForm):
 
         nextURL = self.nextURL()
         if nextURL:
-            api.portal.show_message(self.status)
+            api.portal.show_message(self.status, request=self.request)
             self.request.response.redirect(nextURL)
 
     @button.buttonAndHandler(
@@ -170,7 +170,7 @@ class TokenEditForm(form.EditForm):
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        api.portal.show_message(self.status)
+        api.portal.show_message(self.status, request=self.request)
 
 # wrap the form with plone.app.z3cform's Form wrapper
 TokenEditFormView = layout.wrap_form(TokenEditForm)
@@ -220,13 +220,13 @@ class TokenDeleteForm(form.Form):
 
         self.status = _(u'delete_success', default=u"Token removed")
         self.request.response.redirect(self.nextURL())
-        api.portal.show_message(self.status)
+        api.portal.show_message(self.status, request=self.request)
 
     @button.buttonAndHandler(_(u'Cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        api.portal.show_message(self.status)
+        api.portal.show_message(self.status, request=self.request)
 
 
 TokenDeleteFormView = layout.wrap_form(TokenDeleteForm)
