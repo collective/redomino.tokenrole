@@ -22,6 +22,7 @@ from redomino.tokenrole.testing import REDOMINO_TOKENROLE_INTEGRATION_TESTING
 from redomino.tokenrole.interfaces import ITokenURL
 from redomino.tokenrole.validators import isEmail
 from redomino.tokenrole.browser.send_token import TokenSendForm
+from redomino.tokenrole.browser.token_manage import TokenDeleteForm
 
 import unittest
 
@@ -61,7 +62,7 @@ class TestPortal(unittest.TestCase):
         )
 
 
-class TestSendTokenForm(unittest.TestCase):
+class TestTokenForms(unittest.TestCase):
     """ Maps settings """
     layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
 
@@ -71,11 +72,18 @@ class TestSendTokenForm(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.doc = api.content.create(self.portal, 'Document', id='test-doc')
 
-    def test_widgets(self):
+    def test_sendform_widgets(self):
         self.request.form['form.widgets.token_id'] = 'secret-hash'
         form = TokenSendForm(self.doc, self.request)
         form.update()
         self.assertEqual(form.widgets['token_id'].value, 'secret-hash')
         self.assertEqual(form.widgets['token_display'].value, 'secret-hash')
+
+    def test_deleteform_widgets(self):
+        self.request.form['form.widgets.token_id'] = 'secret-delete-hash'
+        form = TokenDeleteForm(self.doc, self.request)
+        form.update()
+        self.assertEqual(form.widgets['token_id'].value, 'secret-delete-hash')
+        self.assertEqual(form.widgets['token_display'].value, 'secret-delete-hash')
 
 # EOF

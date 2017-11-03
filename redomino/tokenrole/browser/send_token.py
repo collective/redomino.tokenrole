@@ -72,7 +72,7 @@ class TokenSendForm(form.Form):
     def handle_submit(self, action):
         data, errors = self.extractData()
         if errors:
-            self.status = _('token_role_send_ko', default=u'An error has occurred')
+            self.status = _('errors')
             return
 
         # do something usefull, here we send the mail and
@@ -80,15 +80,14 @@ class TokenSendForm(form.Form):
         self.status = self.send_mail(data)
         self.request.response.redirect(self.nextURL())
 
-    @button.buttonAndHandler(_(u'label_cancel', default=u'Cancel'), name='cancel')
+    @button.buttonAndHandler(_(u'Cancel', default=u'Cancel'), name='cancel')
     def handle_cancel(self, action):
         self.status = self.noChangesMessage
         self.request.response.redirect(self.nextURL())
-        return
 
     def nextURL(self):
-        IStatusMessage(self.request).addStatusMessage(self.status, type='info')
-        return "%s/%s" % (self.getContent().absolute_url(), '@@token_manage')
+        api.portal.show_message(self.status)
+        return "%s/%s" % (self.context.absolute_url(), '@@token_manage')
 
     def send_mail(self, data):
         email_list = data['email_list']
@@ -106,8 +105,9 @@ class TokenSendForm(form.Form):
             for recipient in email_list:
                 api.portal.send_email(
                     recipient=recipient, subject=subject, body=message)
+            return _('token_role_send_ok_mail', default=u'Token email sent.')
         except ValueError:
-            return _('token_role_send_ko_mail', default=u'Error sending email')
+            return _('token_role_send_ko_mail', default=u'Error sending email.')
 
 # wrap the form with plone.app.z3cform's Form wrapper
 TokenSendFormView = layout.wrap_form(TokenSendForm)

@@ -29,7 +29,7 @@ from zope.interface import implementer
 
 try:
     from plone.protect.utils import safeWrite
-except ImportError:
+except ImportError:  # pragma: no cover
     def safeWrite(context, request=None):
         return
 
