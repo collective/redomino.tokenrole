@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0rc3 (unreleased)
+1.0rc3 (2017-11-08)
 -------------------
 
 - Fix error when sending token url via email
