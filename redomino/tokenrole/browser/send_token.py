@@ -90,6 +90,8 @@ class TokenSendForm(form.Form):
         return "%s/%s" % (self.context.absolute_url(), '@@token_manage')
 
     def send_mail(self, data):
+        current_user = api.user.get_current()
+        sender = current_user.getProperty('email', default=None)
         email_list = data['email_list']
         subject = safe_unicode(data['subject'])
         text = safe_unicode(data['text'])
@@ -104,6 +106,7 @@ class TokenSendForm(form.Form):
         try:
             for recipient in email_list:
                 api.portal.send_email(
+                    sender=sender,
                     recipient=recipient, subject=subject, body=message)
             return _('token_role_send_ok_mail', default=u'Token email sent.')
         except ValueError:
