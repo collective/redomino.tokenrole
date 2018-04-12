@@ -10,7 +10,7 @@ env:
   - PLONE_VERSION=5.0
   - PLONE_VERSION=5.1
 before_install:
-  - if [ $PLONE_VERSION == 4.3 ]; then pip install --upgrade setuptools==26.1.1 zc.buildout==2.9.5; fi
+  - if [ $PLONE_VERSION == 4.3 ]; then pip install --upgrade setuptools==26.1.1 zc.buildout==2.9.5 six==1.10.0; fi
   - if [ $PLONE_VERSION == 5.0 ]; then pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.0/requirements.txt; fi
   - if [ $PLONE_VERSION == 5.1 ]; then pip install -r https://raw.githubusercontent.com/plone/buildout.coredev/5.1/requirements.txt; fi
 install:
