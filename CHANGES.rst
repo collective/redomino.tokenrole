@@ -5,7 +5,8 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Use email of current user, instead of system email
+  [tomgross]
 
 
 1.0rc3 (2017-11-08)
