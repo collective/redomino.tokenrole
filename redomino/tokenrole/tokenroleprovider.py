@@ -119,8 +119,7 @@ class TokenRolesLocalRolesProviderAdapter(object):
             if expire_date.replace(tzinfo=None) > datetime.now():
                 if token not in request.cookies:
                     physical_path = self.context.getPhysicalPath()
-                    # Is there a better method for calculate the url_path?
-                    url_path = '/' + '/'.join(request.physicalPathToVirtualPath(physical_path))
+                    url_path = urllib.quote('/' + '/'.join(request.physicalPathToVirtualPath(physical_path)))
                     response.setCookie(name='token',
                                        value=token,
                                        expires=DateTime(expire_date).toZone('GMT').rfc822(),

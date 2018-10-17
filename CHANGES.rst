@@ -5,6 +5,7 @@ Changelog
 1.1 (unreleased)
 ----------------
 
+- Quote url path when setting cookie
 - Fix email tests and travis tests
   [instification]
 
