@@ -32,8 +32,10 @@ from Products.MailHost.interfaces import IMailHost
 from zope.component import getSiteManager
 from zope.component import getUtility
 
-
 import unittest
+import pkg_resources
+
+PLONE_VERSION = pkg_resources.get_distribution('Products.CMFPlone').version
 
 
 class TestMailing(unittest.TestCase):
@@ -46,10 +48,15 @@ class TestMailing(unittest.TestCase):
         mails = self.portal.MailHost = MockMailHost('MailHost')
         # configure mailhost
         mails.smtp_host = 'localhost'
-        api.portal.set_registry_record(
-            'plone.email_from_name', u'Portal Owner', )
-        api.portal.set_registry_record(
-            'plone.email_from_address', 'sender@example.org', )
+        mails.smtp_port = '25'
+        if PLONE_VERSION < '5.0':
+            mails.email_from_name = u'Portal Owner'
+            mails.email_from_address = 'sender@example.org'
+        else:
+            api.portal.set_registry_record(
+                'plone.email_from_name', u'Portal Owner', )
+            api.portal.set_registry_record(
+                  'plone.email_from_address', 'sender@example.org', )
         sm = getSiteManager(self.portal)
         sm.unregisterUtility(provided=IMailHost)
         sm.registerUtility(mails, IMailHost)

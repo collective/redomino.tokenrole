@@ -5,7 +5,8 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix email tests and travis tests
+  [instification]
 
 
 1.0 (2018-04-16)
