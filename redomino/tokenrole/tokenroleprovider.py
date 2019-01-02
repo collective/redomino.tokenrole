@@ -33,6 +33,8 @@ except ImportError:  # pragma: no cover
     def safeWrite(context, request=None):
         return
 
+import urllib
+
 
 ANNOTATIONS_KEY = 'redomino.tokenrole.tokenrole_annotations'
 
