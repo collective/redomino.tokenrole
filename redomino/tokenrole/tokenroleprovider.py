@@ -22,6 +22,7 @@ from persistent.dict import PersistentDict
 from redomino.tokenrole.interfaces import ITokenRolesAnnotate
 from redomino.tokenrole.interfaces import ITokenInfoSchema
 from redomino.tokenrole.interfaces import ITokenRolesProviding
+from six.moves import urllib
 from zope.annotation.interfaces import IAnnotations
 from zope.component import adapter
 from zope.globalrequest import getRequest
@@ -33,7 +34,6 @@ except ImportError:  # pragma: no cover
     def safeWrite(context, request=None):
         return
 
-import urllib
 
 
 ANNOTATIONS_KEY = 'redomino.tokenrole.tokenrole_annotations'
