@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Installer for the redomino.tokenrole package."""
+import sys
 
 from setuptools import find_packages
 from setuptools import setup
@@ -11,6 +12,18 @@ long_description = '\n\n'.join([
     open('CHANGES.rst').read(),
 ])
 
+
+install_requires=[
+    'plone.api',
+    'Products.GenericSetup>=1.8.2',
+    'Products.validation',
+    'setuptools',
+    'z3c.jbot',
+    'six',
+]
+
+if sys.version_info[0] > 2:
+    install_requires.append('apply')
 
 setup(
     name='redomino.tokenrole',
@@ -38,14 +51,7 @@ setup(
     namespace_packages=['redomino'],
     include_package_data=True,
     zip_safe=False,
-    install_requires=[
-        'plone.api',
-        'Products.GenericSetup>=1.8.2',
-        'Products.validation',
-        'setuptools',
-        'z3c.jbot',
-        'six',
-    ],
+    install_requires=install_requires,
     extras_require={
         'test': [
             'plone.app.testing',

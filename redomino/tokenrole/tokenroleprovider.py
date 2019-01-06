@@ -34,6 +34,10 @@ except ImportError:  # pragma: no cover
     def safeWrite(context, request=None):
         return
 
+try:
+    apply
+except NameError:  # pragma: no cover
+    from apply import apply
 
 
 ANNOTATIONS_KEY = 'redomino.tokenrole.tokenrole_annotations'

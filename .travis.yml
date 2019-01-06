@@ -1,10 +1,20 @@
 language: python
-python: 2.7
+python:
+ - 2.7
+ - 3.6
 sudo: false
 cache:
   pip: true
   directories:
     - eggs
+matrix:
+  exclude
+    - python: 3.6
+      env: PLONE_VERSION=4.3
+    - python: 3.6
+      env: PLONE_VERSION=5.0
+    - python: 3.6
+      env: PLONE_VERSION=5.1
 env:
   - PLONE_VERSION=4.3
   - PLONE_VERSION=5.0
