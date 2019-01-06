@@ -8,10 +8,7 @@ Changelog
 - Fixed missing urllib import with Python3 compatible import and add six as dependency
   [MrTango]
 
-- Let travis test Plone 5.2
-  [tomgross]
-
-- Python 3 compatibility
+- Plone 5.2 (with Python 3) compatibility
   [tomgross]
 
 1.1 (2018-10-17)
