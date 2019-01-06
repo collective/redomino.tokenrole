@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-1.2 (unreleased)
-----------------
+1.1.1 (2019-01-06)
+------------------
 
 - Fixed missing urllib import with Python3 compatible import and add six as dependency
   [MrTango]
