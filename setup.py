@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """Installer for the redomino.tokenrole package."""
-import sys
-
 from setuptools import find_packages
 from setuptools import setup
 
@@ -20,10 +18,9 @@ install_requires=[
     'setuptools',
     'z3c.jbot',
     'six',
+    'apply'
 ]
 
-if sys.version_info[0] > 2:
-    install_requires.append('apply')
 
 setup(
     name='redomino.tokenrole',
