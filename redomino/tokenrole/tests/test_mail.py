@@ -22,20 +22,13 @@ from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import login
 from redomino.tokenrole.testing import REDOMINO_TOKENROLE_INTEGRATION_TESTING
-from redomino.tokenrole.interfaces import ITokenURL
 from redomino.tokenrole.interfaces import ITokenInfoSchema
-from redomino.tokenrole.validators import isEmail
 from redomino.tokenrole.browser.send_token import TokenSendForm
-from redomino.tokenrole.browser.token_manage import TokenDeleteForm
 from Products.CMFPlone.tests.utils import MockMailHost
 from Products.MailHost.interfaces import IMailHost
 from zope.component import getSiteManager
-from zope.component import getUtility
 
 import unittest
-import pkg_resources
-
-PLONE_VERSION = pkg_resources.get_distribution('Products.CMFPlone').version
 
 
 class TestMailing(unittest.TestCase):
@@ -49,7 +42,7 @@ class TestMailing(unittest.TestCase):
         # configure mailhost
         mails.smtp_host = 'localhost'
         mails.smtp_port = '25'
-        if PLONE_VERSION < '5.0':
+        if api.env.plone_version() < '5.0':
             mails.email_from_name = u'Portal Owner'
             mails.email_from_address = 'sender@example.org'
         else:
