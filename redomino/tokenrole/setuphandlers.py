@@ -19,7 +19,12 @@ from StringIO import StringIO
 
 from Products.CMFCore.utils import getToolByName
 
-from Products.PlonePAS.Extensions.Install import activatePluginInterfaces
+try:
+    # Plone 5.x
+    from Products.PlonePAS.setuphandlers import activatePluginInterfaces
+except ImportError:
+    # Plone 4.3
+    from Products.PlonePAS.Extensions.Install import activatePluginInterfaces
 
 from redomino.tokenrole.config import PROJECTNAME
 from redomino.tokenrole.config import PLUGINID

@@ -16,7 +16,10 @@
 # 02111-1307, USA.
 
 from AccessControl.SecurityInfo import ClassSecurityInfo
-from Globals import InitializeClass
+try:
+    from AccessControl.class_init import InitializeClass  # Zope 4
+except ImportError:
+    from Globals import InitializeClass  # Zope 2.x
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 
 from Products.PluggableAuthService.utils import classImplements

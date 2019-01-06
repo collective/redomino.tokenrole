@@ -26,18 +26,27 @@ from redomino.tokenrole.browser.token_manage import TokenDeleteForm
 
 import unittest
 
+plone_version = api.env.plone_version()
+if plone_version >= '5.1':
+    from Products.CMFPlone.utils import get_installer
 
 class TestPortal(unittest.TestCase):
-    """ Maps settings """
-    layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
+    """ Test basic availabity of addon within site """
 
+    layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
+        if plone_version >= '5.1':
+            self.installer = get_installer(self.portal, self.layer['request'])
+        else:
+            self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_installed(self):
-        qi = self.portal.portal_quickinstaller
-        self.assertTrue(qi.isProductInstalled('redomino.tokenrole'))
+        if plone_version >= '5.1':
+            self.assertTrue(self.installer.is_product_installed('redomino.tokenrole'))
+        else:
+            self.assertTrue(self.installer.isProductInstalled('redomino.tokenrole'))
 
     def test_acl_users(self):
         """ plugin in acl_users? """
@@ -63,7 +72,8 @@ class TestPortal(unittest.TestCase):
 
 
 class TestTokenForms(unittest.TestCase):
-    """ Maps settings """
+    """ Test token forms """
+
     layer = REDOMINO_TOKENROLE_INTEGRATION_TESTING
 
     def setUp(self):
