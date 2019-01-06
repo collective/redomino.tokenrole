@@ -11,6 +11,9 @@ Changelog
 - Let travis test Plone 5.2
   [tomgross]
 
+- Python 3 compatibility
+  [tomgross]
+
 1.1 (2018-10-17)
 ----------------
 
