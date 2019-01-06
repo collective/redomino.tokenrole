@@ -15,6 +15,7 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
+from apply import apply
 from borg.localrole.interfaces import ILocalRoleProvider
 from datetime import datetime
 from DateTime import DateTime
@@ -28,16 +29,11 @@ from zope.component import adapter
 from zope.globalrequest import getRequest
 from zope.interface import implementer
 
-try:
+try:  # pragma: no cover
     from plone.protect.utils import safeWrite
 except ImportError:  # pragma: no cover
     def safeWrite(context, request=None):
         return
-
-try:
-    apply
-except NameError:  # pragma: no cover
-    from apply import apply
 
 
 ANNOTATIONS_KEY = 'redomino.tokenrole.tokenrole_annotations'

@@ -15,14 +15,13 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 
+from plone import api
 from six import StringIO
 
-from Products.CMFCore.utils import getToolByName
-
-try:
+try:  # pragma: no cover
     # Plone 5.x
     from Products.PlonePAS.setuphandlers import activatePluginInterfaces
-except ImportError:
+except ImportError:  # pragma: no cover
     # Plone 4.3
     from Products.PlonePAS.Extensions.Install import activatePluginInterfaces
 
@@ -53,7 +52,7 @@ class SetupVarious:
 
     def setup_plugin(self, portal, out):
         """ Create the virtual anonymous group """
-        uf = getToolByName(portal, 'acl_users')
+        uf = api.portal.get_tool('acl_users')
 
         existing = uf.objectIds()
 
