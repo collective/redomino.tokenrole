@@ -106,10 +106,11 @@ class TokenRolesLocalRolesProviderAdapter(object):
 
     def getRoles(self, principal_id):
         """Returns the roles for the given principal in context"""
-        request = getattr(self.context, 'REQUEST', None)
+        request = getRequest()
         if request is None:
             return ()
         response = request.RESPONSE
+
 
         token = request.get('token', None)
         if not token:
