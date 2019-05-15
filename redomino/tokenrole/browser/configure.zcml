@@ -1,7 +1,7 @@
 <configure
  xmlns="http://namespaces.zope.org/zope"
  xmlns:browser="http://namespaces.zope.org/browser"
- xmlns:five="http://namespaces.zope.org/five"
+ xmlns:zcml="http://namespaces.zope.org/zcml"
  >
 
   <!-- Javascripts and resources -->
@@ -14,8 +14,10 @@
   <adapter factory=".validators.SampleValidator" />
 
   <!-- Actions -->
-  <adapter factory=".actions.CancelActions" />
-  <adapter factory=".actions.AddActionHandler" />
+  <adapter factory=".actions.CancelActions" zcml:condition="not-have plone-5" />
+  <adapter factory=".actions.AddActionHandler" zcml:condition="not-have plone-5" />
+  <adapter factory=".send_token.TokenURL"
+           for="zope.interface.Interface" />
 
   <!-- Forms -->
   <browser:page
@@ -24,7 +26,7 @@
     class=".token_manage.TokenAddFormView"
     permission="tokenrole.ManageToken"
     />
-  
+
   <browser:page
     name="token_edit"
     for="..interfaces.ITokenRolesProviding"
@@ -38,14 +40,14 @@
     class=".send_token.TokenSendFormView"
     permission="tokenrole.ManageToken"
     />
-      
+
   <browser:page
     name="token_delete"
     for="..interfaces.ITokenRolesProviding"
     class=".token_manage.TokenDeleteFormView"
     permission="tokenrole.ManageToken"
     />
-  
+
   <!-- Views -->
   <browser:page
     name="token_manage"
@@ -53,5 +55,5 @@
     class=".token_manage.TokenManageView"
     template="token_manage.pt"
     permission="tokenrole.ManageToken" />
-  
+
 </configure>

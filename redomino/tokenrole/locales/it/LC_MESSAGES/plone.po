@@ -17,4 +17,3 @@ msgstr ""
 
 msgid "Manage TokenRole"
 msgstr "Condivisione con link"
-

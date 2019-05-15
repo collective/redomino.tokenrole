@@ -1,0 +1,7 @@
+[report]
+include =
+    redomino/*
+omit =
+    */test*
+    */upgrades/*
+    redomino/__init__.py
