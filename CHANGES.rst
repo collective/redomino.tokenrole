@@ -5,7 +5,9 @@ Changelog
 1.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Add a utils view so that tokens can be added more easily from a script [dmarks]
+- Apply the tokenrole interface to ATCTMixin so it applies to folders too [dmarks]
+- fix to prevent request being accessed unless its there. helps with p.a.async [djay]
 
 
 1.1.1 (2019-01-06)
